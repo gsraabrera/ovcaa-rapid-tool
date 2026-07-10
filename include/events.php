@@ -22,6 +22,13 @@ class class_GlobalEvents extends eventsBase
 	function __construct()
 	{
 	// fill list of events
+		$this->events["BeforeLogin"]=true;
+
+		$this->events["AfterSuccessfulLogin"]=true;
+
+		$this->events["BeforeShowLogin"]=true;
+
+
 
 //	onscreen events
 		$this->events["Dashboard_snippet"] = true;
@@ -31,6 +38,175 @@ class class_GlobalEvents extends eventsBase
 		}
 
 //	handlers
+
+		
+		
+		
+		
+		
+				// Before login
+function BeforeLogin(&$username, &$password, &$message, $pageObject, &$values)
+{
+
+		$adminQuery = "SELECT *
+              FROM ovcaa_rapid_users
+              WHERE ovcaa_rapid_users.\"email\" = '" . $values["email"] . "' and active='1'";
+$admin = DB::Query($adminQuery);
+$data = $admin->fetchAssoc();
+    // Check if the table and field exist in the cache
+//	if($data["ext_security_id"] === '' || $data["ext_security_id"] === null || $values["id"] !== $data["ext_security_id"]){
+		DB::Query("UPDATE ovcaa_rapid_users SET ext_security_id='".$values["id"]."' where email='".$values["email"]."'");
+	//}
+if($data){
+$_SESSION["group_id"] = $data["groupid"];
+	return true;
+}else{
+$_SESSION['redirect_message'] = "Login failed: No account linked to this email. Please contact the administrator for assistance.";
+header('Location: login.php');
+return false;
+}
+;		
+} // function BeforeLogin
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+				// After successful login
+function AfterSuccessfulLogin($username, $password, &$data, $pageObject)
+{
+
+		header("Location: dashboard_dashboard.php?page=dashboard");
+
+exit();
+
+
+// Place event code here.
+// Use "Add Action" button to add code snippets.
+;		
+} // function AfterSuccessfulLogin
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				// Before display
+function BeforeShowLogin(&$xt, &$templatefile, $pageObject)
+{
+
+		
+if (isset($_SESSION['redirect_message'])) {
+		$pageObject->setProxyValue("login_message", $_SESSION['redirect_message']);
+    unset($_SESSION['redirect_message']);
+}
+// Place event code here.
+// Use "Add Action" button to add code snippets.
+;		
+} // function BeforeShowLogin
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 //	onscreen events
 	function event_Dashboard_snippet(&$params)
