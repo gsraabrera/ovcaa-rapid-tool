@@ -378,7 +378,7 @@ function GetFullFieldName($field, $table = "", $addAs = true, $connection = null
 function GetChartType($shorttable)
 {
 	if($shorttable=="student_enlistments_chart")
-		return "2DColumn";
+		return "2DPie";
 	return "";
 }
 

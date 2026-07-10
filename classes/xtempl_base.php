@@ -140,7 +140,7 @@ class XTempl_Base
 			array(
 				"chartName"=>"student_enlistments_chart",
 				"table"=>"public.student_enlistments Chart",
-				"ctype"=>"2DColumn"));
+				"ctype"=>"2DPie"));
 		}
 
 

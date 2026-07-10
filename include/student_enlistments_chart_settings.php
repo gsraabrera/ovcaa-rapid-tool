@@ -170,7 +170,7 @@ $tdatastudent_enlistments_chart[".geocodingEnabled"] = false;
 
 
 // chart settings
-$tdatastudent_enlistments_chart[".chartType"] = "2DColumn";
+$tdatastudent_enlistments_chart[".chartType"] = "2DPie";
 // end of chart settings
 
 
@@ -654,10 +654,10 @@ $tdatastudent_enlistments_chart[".hideMobileList"] = array();
 	$tdatastudent_enlistments_chart["count"] = $fdata;
 		$tdatastudent_enlistments_chart[".searchableFields"][] = "count";
 
-$tdatastudent_enlistments_chart[".chartLabelField"] = "student_id";
+$tdatastudent_enlistments_chart[".chartLabelField"] = "status";
 $tdatastudent_enlistments_chart[".chartSeries"] = array();
 $tdatastudent_enlistments_chart[".chartSeries"][] = array(
-	"field" => "term_id",
+	"field" => "count",
 	"total" => ""
 );
 	$tdatastudent_enlistments_chart[".chartXml"] = '<chart>
@@ -665,21 +665,21 @@ $tdatastudent_enlistments_chart[".chartSeries"][] = array(
 			<attr value="0">public.student_enlistments Chart</attr>
 		</attr>
 		<attr value="chart_type">
-			<attr value="type">2d_column</attr>
+			<attr value="type">2d_pie</attr>
 		</attr>
 
 		<attr value="parameters">';
 	$tdatastudent_enlistments_chart[".chartXml"] .= '<attr value="0">
-			<attr value="name">term_id</attr>';
+			<attr value="name">count</attr>';
 	$tdatastudent_enlistments_chart[".chartXml"] .= '</attr>';
 	$tdatastudent_enlistments_chart[".chartXml"] .= '<attr value="1">
-		<attr value="name">student_id</attr>
+		<attr value="name">status</attr>
 	</attr>';
 	$tdatastudent_enlistments_chart[".chartXml"] .= '</attr>
 			<attr value="appearance">';
 
 
-	$tdatastudent_enlistments_chart[".chartXml"] .= '<attr value="head">'.xmlencode("public.student_enlistments Chart").'</attr>
+	$tdatastudent_enlistments_chart[".chartXml"] .= '<attr value="head">'.xmlencode("student_enlistments Chart").'</attr>
 <attr value="foot">'.xmlencode("Legend Title").'</attr>
 <attr value="y_axis_label">'.xmlencode("term_id").'</attr>
 
@@ -691,8 +691,8 @@ $tdatastudent_enlistments_chart[".chartSeries"][] = array(
 <attr value="sanim">true</attr>
 <attr value="sstacked">false</attr>
 <attr value="slog">false</attr>
-<attr value="aqua">None</attr>
-<attr value="cview">Column</attr>
+<attr value="aqua">0</attr>
+<attr value="cview">0</attr>
 <attr value="is3d">0</attr>
 <attr value="isstacked">0</attr>
 <attr value="linestyle">0</attr>
