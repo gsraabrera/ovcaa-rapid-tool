@@ -1,0 +1,392 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$pagetitle}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<base href="{$projectPath}">
+		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+	{BEGIN rtlCSS}
+	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
+	{END rtlCSS}
+	{BEGIN styleCSSFiles}
+	<link REL="stylesheet" href="{$stylepath}" type="text/css">
+	{END styleCSSFiles}
+			
+	</head>
+
+	<body class="{$stylename} function-search" >
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		{$locking}
+		<div class="r-small-page" 
+			data-body-align="center"
+			data-body-width="standard"
+		>
+							{BEGIN top_block}
+<div class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="small" {$form_top} data-pageid="{$pageid}"
+		data-v-width="6"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="top_c1" data-pageid="{$pageid}"	{$cell_top_c1}
+	class=" r-ori-vert			col-md-12
+	">
+	 
+		<h2 data-itemtype="search_header" data-itemid="search_header" {$item_search_header} data-pageid="{$pageid}" >{$pagetitlelabel enrollment_count_by_unit_and_batch search}</h2>
+	</div>					</div>
+	</div>		
+{END top_block}
+									{BEGIN above-grid_block}
+<div class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="small" {$form_above-grid} data-pageid="{$pageid}"
+		data-v-width="6"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c1" data-pageid="{$pageid}"	{$cell_above-grid_c1}
+	class=" r-ori-vert			col-md-12
+	">
+	</div>					</div>
+	</div>		
+{END above-grid_block}
+									{BEGIN grid_block}
+
+
+
+
+ 
+	 
+												<table 
+	data-body-align="center"
+	data-location="grid" id="form_grid_{$pageid}" data-makeup="small" {$form_grid} data-pageid="{$pageid}" 
+	class="r-edit-form" cellpadding="0" cellspacing="0" 
+	{$grid_hiddenattr} 
+		data-form-width="1"
+		
+		data-v-width="6"
+	>
+	<tbody>
+										<tr {$row_grid_0} >
+										
+
+{BEGIN cellblock_grid_c3}
+<td
+	{$cell_grid_c3}
+	class=" r-ori-vert"
+	
+				data-fullwidth
+		
+			data-cellId="grid_c3" data-pageid="{$pageid}"
+		data-v-cell="6"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN term_id_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_term_id}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="term_id{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field1" {$item_integrated_search_field1} data-pageid="{$pageid}" data-field="term_id" data-fieldname="term_id" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_term_id}">
+		{$label enrollment_count_by_unit_and_batch term_id }	</label>
+	<div class="r-search-option">
+		{$searchtype_term_id}
+	</div>
+	<div class="r-search-field">
+		{$term_id_editcontrol}	</div>
+	<div class="r-search-field">
+		{$term_id_editcontrol1}
+	</div>
+	
+</div>
+
+{END term_id_fieldblock}
+											
+{BEGIN career_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_career}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="career{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field" {$item_integrated_search_field} data-pageid="{$pageid}" data-field="career" data-fieldname="career" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_career}">
+		{$label enrollment_count_by_unit_and_batch career }	</label>
+	<div class="r-search-option">
+		{$searchtype_career}
+	</div>
+	<div class="r-search-field">
+		{$career_editcontrol}	</div>
+	<div class="r-search-field">
+		{$career_editcontrol1}
+	</div>
+	
+</div>
+
+{END career_fieldblock}
+											
+{BEGIN batch_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_batch}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="batch{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field2" {$item_integrated_search_field2} data-pageid="{$pageid}" data-field="batch" data-fieldname="batch" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_batch}">
+		{$label enrollment_count_by_unit_and_batch batch }	</label>
+	<div class="r-search-option">
+		{$searchtype_batch}
+	</div>
+	<div class="r-search-field">
+		{$batch_editcontrol}	</div>
+	<div class="r-search-field">
+		{$batch_editcontrol1}
+	</div>
+	
+</div>
+
+{END batch_fieldblock}
+											
+{BEGIN 0_units_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_0_units}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="0_units{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field3" {$item_integrated_search_field3} data-pageid="{$pageid}" data-field="0_units" data-fieldname="0 units" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_0_units}">
+		{$label enrollment_count_by_unit_and_batch 0_units }	</label>
+	<div class="r-search-option">
+		{$searchtype_0_units}
+	</div>
+	<div class="r-search-field">
+		{$0_units_editcontrol}	</div>
+	<div class="r-search-field">
+		{$0_units_editcontrol1}
+	</div>
+	
+</div>
+
+{END 0_units_fieldblock}
+											
+{BEGIN 1_2_units_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_1_2_units}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="1_2_units{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field4" {$item_integrated_search_field4} data-pageid="{$pageid}" data-field="1_2_units" data-fieldname="1-2 units" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_1_2_units}">
+		{$label enrollment_count_by_unit_and_batch 1_2_units }	</label>
+	<div class="r-search-option">
+		{$searchtype_1_2_units}
+	</div>
+	<div class="r-search-field">
+		{$1_2_units_editcontrol}	</div>
+	<div class="r-search-field">
+		{$1_2_units_editcontrol1}
+	</div>
+	
+</div>
+
+{END 1_2_units_fieldblock}
+											
+{BEGIN 3_5_units_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_3_5_units}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="3_5_units{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field5" {$item_integrated_search_field5} data-pageid="{$pageid}" data-field="3_5_units" data-fieldname="3-5 units" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_3_5_units}">
+		{$label enrollment_count_by_unit_and_batch 3_5_units }	</label>
+	<div class="r-search-option">
+		{$searchtype_3_5_units}
+	</div>
+	<div class="r-search-field">
+		{$3_5_units_editcontrol}	</div>
+	<div class="r-search-field">
+		{$3_5_units_editcontrol1}
+	</div>
+	
+</div>
+
+{END 3_5_units_fieldblock}
+											
+{BEGIN 6_8_units_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_6_8_units}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="6_8_units{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field6" {$item_integrated_search_field6} data-pageid="{$pageid}" data-field="6_8_units" data-fieldname="6-8 units" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_6_8_units}">
+		{$label enrollment_count_by_unit_and_batch 6_8_units }	</label>
+	<div class="r-search-option">
+		{$searchtype_6_8_units}
+	</div>
+	<div class="r-search-field">
+		{$6_8_units_editcontrol}	</div>
+	<div class="r-search-field">
+		{$6_8_units_editcontrol1}
+	</div>
+	
+</div>
+
+{END 6_8_units_fieldblock}
+											
+{BEGIN 9_11_units_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_9_11_units}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="9_11_units{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field7" {$item_integrated_search_field7} data-pageid="{$pageid}" data-field="9_11_units" data-fieldname="9-11 units" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_9_11_units}">
+		{$label enrollment_count_by_unit_and_batch 9_11_units }	</label>
+	<div class="r-search-option">
+		{$searchtype_9_11_units}
+	</div>
+	<div class="r-search-field">
+		{$9_11_units_editcontrol}	</div>
+	<div class="r-search-field">
+		{$9_11_units_editcontrol1}
+	</div>
+	
+</div>
+
+{END 9_11_units_fieldblock}
+											
+{BEGIN 12_14_units_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_12_14_units}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="12_14_units{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field8" {$item_integrated_search_field8} data-pageid="{$pageid}" data-field="12_14_units" data-fieldname="12-14 units" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_12_14_units}">
+		{$label enrollment_count_by_unit_and_batch 12_14_units }	</label>
+	<div class="r-search-option">
+		{$searchtype_12_14_units}
+	</div>
+	<div class="r-search-field">
+		{$12_14_units_editcontrol}	</div>
+	<div class="r-search-field">
+		{$12_14_units_editcontrol1}
+	</div>
+	
+</div>
+
+{END 12_14_units_fieldblock}
+											
+{BEGIN 15_units_above_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_15_units_above}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="15_units_above{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field9" {$item_integrated_search_field9} data-pageid="{$pageid}" data-field="15_units_above" data-fieldname="15 units above" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_15_units_above}">
+		{$label enrollment_count_by_unit_and_batch 15_units_above }	</label>
+	<div class="r-search-option">
+		{$searchtype_15_units_above}
+	</div>
+	<div class="r-search-field">
+		{$15_units_above_editcontrol}	</div>
+	<div class="r-search-field">
+		{$15_units_above_editcontrol1}
+	</div>
+	
+</div>
+
+{END 15_units_above_fieldblock}
+											
+{BEGIN total_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_total}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="total{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field10" {$item_integrated_search_field10} data-pageid="{$pageid}" data-field="total" data-fieldname="total" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_total}">
+		{$label enrollment_count_by_unit_and_batch total }	</label>
+	<div class="r-search-option">
+		{$searchtype_total}
+	</div>
+	<div class="r-search-field">
+		{$total_editcontrol}	</div>
+	<div class="r-search-field">
+		{$total_editcontrol1}
+	</div>
+	
+</div>
+
+{END total_fieldblock}
+	
+								</td>
+			{END cellblock_grid_c3}
+								</tr>
+			</tbody></table>
+{END grid_block}
+									{BEGIN below-grid_block}
+<div class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="small" {$form_below-grid} data-pageid="{$pageid}"
+		data-v-width="6"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="below-grid_c1" data-pageid="{$pageid}"	{$cell_below-grid_c1}
+	class="			col-md-12
+	">
+	 
+		<span data-itemtype="search_search" data-itemid="search_search" {$item_search_search} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-primary   
+	" {$searchbutton_attrs} data-page=undefined >
+							Search			</a>
+</span>
+	 
+		<span data-itemtype="search_reset" data-itemid="search_reset" {$item_search_reset} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" {$resetbutton_attrs} >
+							Reset			</a>
+</span>
+	 
+		{BEGIN back_button}
+<span data-itemtype="search_back_list" data-itemid="search_back_list" {$item_search_back_list} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" {$backbutton_attrs} >
+							Back to list			</a>
+</span>
+{END back_button}
+	 
+		{BEGIN cancel_button}
+<span data-itemtype="search_cancel" data-itemid="search_cancel" {$item_search_cancel} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" id="cancelButton{$id}" >
+							Cancel			</a>
+</span>
+{END cancel_button}
+	</div>					</div>
+	</div>		
+{END below-grid_block}
+			</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

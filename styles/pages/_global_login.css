@@ -1,0 +1,61 @@
+[data-cellid="footer_c2"][data-page="_global_login"][data-cellid="footer_c2"][data-page="_global_login"][data-cellid="footer_c2"][data-page="_global_login"] {
+  width: 66.66666667%;
+}
+[data-cellid="footer_c4"][data-page="_global_login"][data-cellid="footer_c4"][data-page="_global_login"][data-cellid="footer_c4"][data-page="_global_login"] {
+  width: 66.66666667%;
+}
+[data-cellid="footer_c"][data-page="_global_login"][data-cellid="footer_c"][data-page="_global_login"][data-cellid="footer_c"][data-page="_global_login"] {
+  width: 66.66666667%;
+}
+[data-page="_global_login"][data-itemid="login_external"] > .btn {
+  background-color: #7b1113;
+  background-image: none;
+  text-shadow: none;
+}
+[data-page="_global_login"][data-itemid="image"] {
+  width: 150px;
+}
+[data-page="_global_login"][data-itemid="page_image_ash8f23hr"] {
+  width: 400px;
+}
+
+/* Put  your custom CSS code here */
+
+[data-page="_global_login"][data-itemid="image"] {
+  color: red;
+}
+img[data-itemid="image"]{
+    display:block;
+    margin:0 auto;
+}
+/* Put  your custom CSS code here */
+
+/* Put  your custom CSS code here */
+
+:host {
+  color: red;
+  border-color: transparent;
+}
+
+
+.panel-primary > .panel-heading {
+    color: #fff;
+    background-color: transparent; 
+    border-color: transparent; 
+}
+
+[data-page="_global_login"][data-itemid="login_external"] > .btn {
+    border-color: transparent;
+}
+
+.panel-primary {
+    border-color: #f3f3f3;
+    border-radius: 5px;
+}
+
+body {
+background-color: #f0f4f9;
+    display: grid;
+    place-items: center; 
+    height: 100vh;
+}

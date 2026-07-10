@@ -1,0 +1,44 @@
+<?php
+$dalTableclasses = array();
+$dalTableclasses["id"] = array("type"=>20,"varname"=>"id", "name" => "id", "autoInc" => "1");
+$dalTableclasses["course_id"] = array("type"=>3,"varname"=>"course_id", "name" => "course_id", "autoInc" => "0");
+$dalTableclasses["term_id"] = array("type"=>3,"varname"=>"term_id", "name" => "term_id", "autoInc" => "0");
+$dalTableclasses["parent_class_id"] = array("type"=>3,"varname"=>"parent_class_id", "name" => "parent_class_id", "autoInc" => "0");
+$dalTableclasses["type"] = array("type"=>200,"varname"=>"type", "name" => "type", "autoInc" => "0");
+$dalTableclasses["section"] = array("type"=>200,"varname"=>"section", "name" => "section", "autoInc" => "0");
+$dalTableclasses["date"] = array("type"=>200,"varname"=>"date", "name" => "date", "autoInc" => "0");
+$dalTableclasses["mon"] = array("type"=>11,"varname"=>"mon", "name" => "mon", "autoInc" => "0");
+$dalTableclasses["tue"] = array("type"=>11,"varname"=>"tue", "name" => "tue", "autoInc" => "0");
+$dalTableclasses["wed"] = array("type"=>11,"varname"=>"wed", "name" => "wed", "autoInc" => "0");
+$dalTableclasses["thu"] = array("type"=>11,"varname"=>"thu", "name" => "thu", "autoInc" => "0");
+$dalTableclasses["fri"] = array("type"=>11,"varname"=>"fri", "name" => "fri", "autoInc" => "0");
+$dalTableclasses["sat"] = array("type"=>11,"varname"=>"sat", "name" => "sat", "autoInc" => "0");
+$dalTableclasses["start_time"] = array("type"=>200,"varname"=>"start_time", "name" => "start_time", "autoInc" => "0");
+$dalTableclasses["end_time"] = array("type"=>200,"varname"=>"end_time", "name" => "end_time", "autoInc" => "0");
+$dalTableclasses["credit"] = array("type"=>5,"varname"=>"credit", "name" => "credit", "autoInc" => "0");
+$dalTableclasses["hours"] = array("type"=>5,"varname"=>"hours", "name" => "hours", "autoInc" => "0");
+$dalTableclasses["tm_id"] = array("type"=>3,"varname"=>"tm_id", "name" => "tm_id", "autoInc" => "0");
+$dalTableclasses["facility_id"] = array("type"=>200,"varname"=>"facility_id", "name" => "facility_id", "autoInc" => "0");
+$dalTableclasses["max_class_size"] = array("type"=>3,"varname"=>"max_class_size", "name" => "max_class_size", "autoInc" => "0");
+$dalTableclasses["active_class_size"] = array("type"=>3,"varname"=>"active_class_size", "name" => "active_class_size", "autoInc" => "0");
+$dalTableclasses["activity"] = array("type"=>200,"varname"=>"activity", "name" => "activity", "autoInc" => "0");
+$dalTableclasses["class_nbr"] = array("type"=>3,"varname"=>"class_nbr", "name" => "class_nbr", "autoInc" => "0");
+$dalTableclasses["assoc"] = array("type"=>3,"varname"=>"assoc", "name" => "assoc", "autoInc" => "0");
+$dalTableclasses["acad_org"] = array("type"=>200,"varname"=>"acad_org", "name" => "acad_org", "autoInc" => "0");
+$dalTableclasses["acad_group"] = array("type"=>200,"varname"=>"acad_group", "name" => "acad_group", "autoInc" => "0");
+$dalTableclasses["created_at"] = array("type"=>135,"varname"=>"created_at", "name" => "created_at", "autoInc" => "0");
+$dalTableclasses["updated_at"] = array("type"=>135,"varname"=>"updated_at", "name" => "updated_at", "autoInc" => "0");
+$dalTableclasses["prerog_count"] = array("type"=>3,"varname"=>"prerog_count", "name" => "prerog_count", "autoInc" => "0");
+$dalTableclasses["reserved_count"] = array("type"=>3,"varname"=>"reserved_count", "name" => "reserved_count", "autoInc" => "0");
+$dalTableclasses["is_active"] = array("type"=>11,"varname"=>"is_active", "name" => "is_active", "autoInc" => "0");
+$dalTableclasses["hide_faculty"] = array("type"=>11,"varname"=>"hide_faculty", "name" => "hide_faculty", "autoInc" => "0");
+$dalTableclasses["consent"] = array("type"=>200,"varname"=>"consent", "name" => "consent", "autoInc" => "0");
+$dalTableclasses["is_prerog_open"] = array("type"=>11,"varname"=>"is_prerog_open", "name" => "is_prerog_open", "autoInc" => "0");
+$dalTableclasses["is_coi_open"] = array("type"=>11,"varname"=>"is_coi_open", "name" => "is_coi_open", "autoInc" => "0");
+$dalTableclasses["status"] = array("type"=>200,"varname"=>"status", "name" => "status", "autoInc" => "0");
+$dalTableclasses["is_grade_posted"] = array("type"=>11,"varname"=>"is_grade_posted", "name" => "is_grade_posted", "autoInc" => "0");
+$dalTableclasses["is_partial_posting"] = array("type"=>11,"varname"=>"is_partial_posting", "name" => "is_partial_posting", "autoInc" => "0");
+$dalTableclasses["deleted_at"] = array("type"=>135,"varname"=>"deleted_at", "name" => "deleted_at", "autoInc" => "0");
+
+$dal_info["financialslatestDbatlocalhost_public_classes"] = &$dalTableclasses;
+?>
