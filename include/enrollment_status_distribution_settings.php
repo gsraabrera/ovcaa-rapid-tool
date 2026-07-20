@@ -679,7 +679,7 @@ $tdataenrollment_status_distribution[".chartSeries"][] = array(
 			<attr value="appearance">';
 
 
-	$tdataenrollment_status_distribution[".chartXml"] .= '<attr value="head">'.xmlencode("student_enlistments Chart").'</attr>
+	$tdataenrollment_status_distribution[".chartXml"] .= '<attr value="head">'.xmlencode("Enrollment Status Distribution").'</attr>
 <attr value="foot">'.xmlencode("Legend Title").'</attr>
 <attr value="y_axis_label">'.xmlencode("term_id").'</attr>
 
