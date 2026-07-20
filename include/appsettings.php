@@ -634,7 +634,7 @@ $globalSettings["LandingURL"] = "";
 $globalSettings["LandingPageId"] = "";
 
 $globalSettings["ProjectLogo"] = array();
-$globalSettings["ProjectLogo"]["English"] = "ovcaa-rapid-tool";
+$globalSettings["ProjectLogo"]["English"] = "OVCAA AMIS TOOL";
 
 $globalSettings["CookieBanner"] = array();
 
@@ -753,9 +753,9 @@ $suggestAllContent = true;
 $strLastSQL = "";
 $showCustomMarkerOnPrint = false;
 
-$projectBuildKey = "40_1783414334";
+$projectBuildKey = "41_1783414334";
 $wizardBuildKey = "41974";
-$projectBuildNumber = "40";
+$projectBuildNumber = "41";
 
 $mlang_messages = array();
 $mlang_charsets = array();
