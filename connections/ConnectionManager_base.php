@@ -244,7 +244,7 @@ class ConnectionManager_Base
 	{
 		$connectionsIds = array();
 		$connectionsIds["public.ovcaa_rapid_users"] = "financialslatestDbatlocalhost";
-		$connectionsIds["public.student_enlistments Chart"] = "financialslatestDbatlocalhost";
+		$connectionsIds["Enrollment Status Distribution"] = "financialslatestDbatlocalhost";
 		$connectionsIds["enrollment_count_by_unit_and_batch"] = "financialslatestDbatlocalhost";
 		$connectionsIds["grade_submission_monitoring"] = "financialslatestDbatlocalhost";
 		$connectionsIds["unposted_student_grades"] = "financialslatestDbatlocalhost";

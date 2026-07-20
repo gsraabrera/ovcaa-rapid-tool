@@ -3582,8 +3582,8 @@ function fillProjectEntites()
 	$projectEntitiesReverse[ "ovcaa_rapid_users" ] = "public.ovcaa_rapid_users";
 	$projectEntities[ "Dashboard" ] = array( "url" => "dashboard", "type" => 4 );
 	$projectEntitiesReverse[ "dashboard" ] = "Dashboard";
-	$projectEntities[ "public.student_enlistments Chart" ] = array( "url" => "student_enlistments_chart", "type" => 3 );
-	$projectEntitiesReverse[ "student_enlistments_chart" ] = "public.student_enlistments Chart";
+	$projectEntities[ "Enrollment Status Distribution" ] = array( "url" => "enrollment_status_distribution", "type" => 3 );
+	$projectEntitiesReverse[ "enrollment_status_distribution" ] = "Enrollment Status Distribution";
 	$projectEntities[ "enrollment_count_by_unit_and_batch" ] = array( "url" => "enrollment_count_by_unit_and_batch", "type" => 1 );
 	$projectEntitiesReverse[ "enrollment_count_by_unit_and_batch" ] = "enrollment_count_by_unit_and_batch";
 	$projectEntities[ "grade_submission_monitoring" ] = array( "url" => "grade_submission_monitoring", "type" => 1 );

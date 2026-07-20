@@ -207,7 +207,7 @@ function checkTableName($shortTName )
 		return true;
 	if ("dashboard" == $shortTName )
 		return true;
-	if ("student_enlistments_chart" == $shortTName )
+	if ("enrollment_status_distribution" == $shortTName )
 		return true;
 	if ("enrollment_count_by_unit_and_batch" == $shortTName )
 		return true;
@@ -285,12 +285,12 @@ function GetTablesList($pdfMode = false)
 	}
 	$tableAvailable = true;
 	if( $checkPermissions ) {
-		$strPerm = GetUserPermissions("public.student_enlistments Chart");
+		$strPerm = GetUserPermissions("Enrollment Status Distribution");
 		$tableAvailable = ( strpos($strPerm, "P") !== false
 			|| $pdfMode && strpos($strPerm, "S") !== false );
 	}
 	if( $tableAvailable ) {
-		$arr[]="public.student_enlistments Chart";
+		$arr[]="Enrollment Status Distribution";
 	}
 	$tableAvailable = true;
 	if( $checkPermissions ) {
@@ -330,7 +330,7 @@ function GetTablesListWithoutSecurity()
 	$arr = array();
 	$arr[]="public.ovcaa_rapid_users";
 	$arr[]="Dashboard";
-	$arr[]="public.student_enlistments Chart";
+	$arr[]="Enrollment Status Distribution";
 	$arr[]="enrollment_count_by_unit_and_batch";
 	$arr[]="grade_submission_monitoring";
 	$arr[]="unposted_student_grades";
@@ -377,7 +377,7 @@ function GetFullFieldName($field, $table = "", $addAs = true, $connection = null
  */
 function GetChartType($shorttable)
 {
-	if($shorttable=="student_enlistments_chart")
+	if($shorttable=="enrollment_status_distribution")
 		return "2DPie";
 	return "";
 }
@@ -969,7 +969,7 @@ function GetUserPermissionsStatic( $table )
 		// grant all by default
 		return "ADESPI".$extraPerm;
 	}
-	if( $table=="public.student_enlistments Chart" )
+	if( $table=="Enrollment Status Distribution" )
 	{
 //	default permissions
 		// grant all by default

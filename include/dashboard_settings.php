@@ -41,13 +41,13 @@ if(mlang_getcurrentlang()=="English")
 //	search fields
 $tdatadashboard[".searchFields"] = array();
 $dashField = array();
-$dashField[] = array( "table"=>"public.student_enlistments Chart", "field"=>"term_id" );
+$dashField[] = array( "table"=>"Enrollment Status Distribution", "field"=>"term_id" );
 $tdatadashboard[".searchFields"]["public_student_enlistments_Chart_term_id"] = $dashField;
 $dashField = array();
-$dashField[] = array( "table"=>"public.student_enlistments Chart", "field"=>"status" );
+$dashField[] = array( "table"=>"Enrollment Status Distribution", "field"=>"status" );
 $tdatadashboard[".searchFields"]["public_student_enlistments_Chart_status"] = $dashField;
 $dashField = array();
-$dashField[] = array( "table"=>"public.student_enlistments Chart", "field"=>"count" );
+$dashField[] = array( "table"=>"Enrollment Status Distribution", "field"=>"count" );
 $tdatadashboard[".searchFields"]["public_student_enlistments_Chart_count"] = $dashField;
 $dashField = array();
 $dashField[] = array( "table"=>"enrollment_count_by_unit_and_batch", "field"=>"term_id" );
@@ -119,7 +119,7 @@ $tdatadashboard[".dashElements"] = array();
 	
 
 	$tdatadashboard[".dashElements"][] = $dbelement;
-	$dbelement = array( "elementName" => "public_student_enlistments_Chart_chart", "table" => "public.student_enlistments Chart",
+	$dbelement = array( "elementName" => "Enrollment_Status_Distribution_chart", "table" => "Enrollment Status Distribution",
 		 "pageName" => "","type" => 1);
 	$dbelement["cellName"] = "";
 
