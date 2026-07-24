@@ -248,6 +248,7 @@ class ConnectionManager_Base
 		$connectionsIds["enrollment_count_by_unit_and_batch"] = "financialslatestDbatlocalhost";
 		$connectionsIds["grade_submission_monitoring"] = "financialslatestDbatlocalhost";
 		$connectionsIds["unposted_student_grades"] = "financialslatestDbatlocalhost";
+		$connectionsIds["Enrollment Distribution by Home College and Total Number of Units Enrolled"] = "financialslatestDbatlocalhost";
 
 		$this->_tablesConnectionIds = &$connectionsIds;
 	}

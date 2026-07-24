@@ -41,7 +41,7 @@
 	class=" r-ori-vert			col-md-12
 	">
 	 
-		<h2 data-itemtype="search_header" data-itemid="search_header" {$item_search_header} data-pageid="{$pageid}" >{$pagetitlelabel enrollment_count_by_unit_and_batch search}</h2>
+		<h2 data-itemtype="search_header" data-itemid="search_header" {$item_search_header} data-pageid="{$pageid}" >{$pagetitlelabel Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled search}</h2>
 	</div>					</div>
 	</div>		
 {END top_block}
@@ -102,7 +102,7 @@
 
 
 	<label class="r-search-label control-label" for="{$labelfor_term_id}">
-		{$label enrollment_count_by_unit_and_batch term_id }	</label>
+		{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled term_id }	</label>
 	<div class="r-search-option">
 		{$searchtype_term_id}
 	</div>
@@ -124,7 +124,7 @@
 
 
 	<label class="r-search-label control-label" for="{$labelfor_0_units}">
-		{$label enrollment_count_by_unit_and_batch 0_units }	</label>
+		{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 0_units }	</label>
 	<div class="r-search-option">
 		{$searchtype_0_units}
 	</div>
@@ -146,7 +146,7 @@
 
 
 	<label class="r-search-label control-label" for="{$labelfor_1_2_units}">
-		{$label enrollment_count_by_unit_and_batch 1_2_units }	</label>
+		{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 1_2_units }	</label>
 	<div class="r-search-option">
 		{$searchtype_1_2_units}
 	</div>
@@ -168,7 +168,7 @@
 
 
 	<label class="r-search-label control-label" for="{$labelfor_3_5_units}">
-		{$label enrollment_count_by_unit_and_batch 3_5_units }	</label>
+		{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 3_5_units }	</label>
 	<div class="r-search-option">
 		{$searchtype_3_5_units}
 	</div>
@@ -190,7 +190,7 @@
 
 
 	<label class="r-search-label control-label" for="{$labelfor_6_8_units}">
-		{$label enrollment_count_by_unit_and_batch 6_8_units }	</label>
+		{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 6_8_units }	</label>
 	<div class="r-search-option">
 		{$searchtype_6_8_units}
 	</div>
@@ -212,7 +212,7 @@
 
 
 	<label class="r-search-label control-label" for="{$labelfor_9_11_units}">
-		{$label enrollment_count_by_unit_and_batch 9_11_units }	</label>
+		{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 9_11_units }	</label>
 	<div class="r-search-option">
 		{$searchtype_9_11_units}
 	</div>
@@ -234,7 +234,7 @@
 
 
 	<label class="r-search-label control-label" for="{$labelfor_12_14_units}">
-		{$label enrollment_count_by_unit_and_batch 12_14_units }	</label>
+		{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 12_14_units }	</label>
 	<div class="r-search-option">
 		{$searchtype_12_14_units}
 	</div>
@@ -256,7 +256,7 @@
 
 
 	<label class="r-search-label control-label" for="{$labelfor_15_units_above}">
-		{$label enrollment_count_by_unit_and_batch 15_units_above }	</label>
+		{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 15_units_above }	</label>
 	<div class="r-search-option">
 		{$searchtype_15_units_above}
 	</div>
@@ -278,7 +278,7 @@
 
 
 	<label class="r-search-label control-label" for="{$labelfor_total}">
-		{$label enrollment_count_by_unit_and_batch total }	</label>
+		{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled total }	</label>
 	<div class="r-search-option">
 		{$searchtype_total}
 	</div>
@@ -292,49 +292,27 @@
 
 {END total_fieldblock}
 											
-{BEGIN career_fieldblock}
+{BEGIN college_fieldblock}
 
-<div class="r-integrated-field form-group clearfix {$fielddispclass_career}  r-horizontal-field form-horizontal" 	
-	data-signal-error-for="career{$id}" 
-	data-itemtype="integrated_search_field" data-itemid="integrated_search_field" {$item_integrated_search_field} data-pageid="{$pageid}" data-field="career" data-fieldname="career" >
+<div class="r-integrated-field form-group clearfix {$fielddispclass_college}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="college{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field" {$item_integrated_search_field} data-pageid="{$pageid}" data-field="college" data-fieldname="college" >
 
 
-	<label class="r-search-label control-label" for="{$labelfor_career}">
-		{$label enrollment_count_by_unit_and_batch career }	</label>
+	<label class="r-search-label control-label" for="{$labelfor_college}">
+		{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled college }	</label>
 	<div class="r-search-option">
-		{$searchtype_career}
+		{$searchtype_college}
 	</div>
 	<div class="r-search-field">
-		{$career_editcontrol}	</div>
+		{$college_editcontrol}	</div>
 	<div class="r-search-field">
-		{$career_editcontrol1}
+		{$college_editcontrol1}
 	</div>
 	
 </div>
 
-{END career_fieldblock}
-											
-{BEGIN batch_fieldblock}
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_batch}  r-horizontal-field form-horizontal" 	
-	data-signal-error-for="batch{$id}" 
-	data-itemtype="integrated_search_field" data-itemid="integrated_search_field2" {$item_integrated_search_field2} data-pageid="{$pageid}" data-field="batch" data-fieldname="batch" >
-
-
-	<label class="r-search-label control-label" for="{$labelfor_batch}">
-		{$label enrollment_count_by_unit_and_batch batch }	</label>
-	<div class="r-search-option">
-		{$searchtype_batch}
-	</div>
-	<div class="r-search-field">
-		{$batch_editcontrol}	</div>
-	<div class="r-search-field">
-		{$batch_editcontrol1}
-	</div>
-	
-</div>
-
-{END batch_fieldblock}
+{END college_fieldblock}
 	
 								</td>
 			{END cellblock_grid_c3}

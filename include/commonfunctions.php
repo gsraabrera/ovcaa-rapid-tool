@@ -215,6 +215,8 @@ function checkTableName($shortTName )
 		return true;
 	if ("unposted_student_grades" == $shortTName )
 		return true;
+	if ("enrollment_distribution_by_home_college_and_total_number_of_units_enrolled" == $shortTName )
+		return true;
 	return false;
 }
 
@@ -319,6 +321,15 @@ function GetTablesList($pdfMode = false)
 	if( $tableAvailable ) {
 		$arr[]="unposted_student_grades";
 	}
+	$tableAvailable = true;
+	if( $checkPermissions ) {
+		$strPerm = GetUserPermissions("Enrollment Distribution by Home College and Total Number of Units Enrolled");
+		$tableAvailable = ( strpos($strPerm, "P") !== false
+			|| $pdfMode && strpos($strPerm, "S") !== false );
+	}
+	if( $tableAvailable ) {
+		$arr[]="Enrollment Distribution by Home College and Total Number of Units Enrolled";
+	}
 	return $arr;
 }
 
@@ -334,6 +345,7 @@ function GetTablesListWithoutSecurity()
 	$arr[]="enrollment_count_by_unit_and_batch";
 	$arr[]="grade_submission_monitoring";
 	$arr[]="unposted_student_grades";
+	$arr[]="Enrollment Distribution by Home College and Total Number of Units Enrolled";
 	return $arr;
 }
 
@@ -988,6 +1000,12 @@ function GetUserPermissionsStatic( $table )
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="unposted_student_grades" )
+	{
+//	default permissions
+		// grant all by default
+		return "ADESPI".$extraPerm;
+	}
+	if( $table=="Enrollment Distribution by Home College and Total Number of Units Enrolled" )
 	{
 //	default permissions
 		// grant all by default

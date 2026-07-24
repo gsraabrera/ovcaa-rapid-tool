@@ -390,6 +390,8 @@ class Chart
 			return true;
 		if("public.s_student_grades" == $this->chrt_array['tables'][0])
 			return true;
+		if("public.student_enlistments" == $this->chrt_array['tables'][0])
+			return true;
 		return false;
 	}
 
