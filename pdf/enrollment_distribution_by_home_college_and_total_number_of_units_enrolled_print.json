@@ -27,12 +27,12 @@ pdfDocument = {
 		{BEGIN body}
 		{BEGIN embedded_grid_caption}
 			{
-				text: '{$jscaption enrollment_count_by_unit_and_batch}',
+				text: '{$jscaption Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled}',
 			},
 		{END embedded_grid_caption}
 		{BEGIN embedded_page_title}
 			{
-				text: '{$jspagetitlelabel enrollment_count_by_unit_and_batch print}',
+				text: '{$jspagetitlelabel Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled print}',
 			},
 		{END embedded_page_title}		
 		{ 
@@ -94,9 +94,6 @@ pdfDocument = {
 										{BEGIN col_grid_9}
 					"%",
 					{END col_grid_9}
-										{BEGIN col_grid_10}
-					"%",
-					{END col_grid_10}
 															],
 											heights: [ // first height for header part
 					"%",
@@ -151,7 +148,7 @@ pdfDocument = {
 			"stack": [
 		
 				
-			{"text":"{$jspagetitlelabel enrollment_count_by_unit_and_batch print}","hidden":"{$item_hide_print_header}","fontSize":30},
+			{"text":"{$jspagetitlelabel Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled print}","hidden":"{$item_hide_print_header}","fontSize":30},
 				
 				
 			{"text":"{$printtabheader_text}","hidden":"{$item_hide_print_subheader}"},
@@ -244,7 +241,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel enrollment_count_by_unit_and_batch term_id }","hidden":"{$item_hide_simple_grid_field11}","bold":true},
+			{"text":"{$jslabel Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled term_id }","hidden":"{$item_hide_simple_grid_field2}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -273,7 +270,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel enrollment_count_by_unit_and_batch 0_units }","hidden":"{$item_hide_simple_grid_field12}","bold":true},
+			{"text":"{$jslabel Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 0_units }","hidden":"{$item_hide_simple_grid_field11}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -302,7 +299,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel enrollment_count_by_unit_and_batch 1_2_units }","hidden":"{$item_hide_simple_grid_field13}","bold":true},
+			{"text":"{$jslabel Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 1_2_units }","hidden":"{$item_hide_simple_grid_field12}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -331,7 +328,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel enrollment_count_by_unit_and_batch 3_5_units }","hidden":"{$item_hide_simple_grid_field14}","bold":true},
+			{"text":"{$jslabel Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 3_5_units }","hidden":"{$item_hide_simple_grid_field13}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -360,7 +357,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel enrollment_count_by_unit_and_batch 6_8_units }","hidden":"{$item_hide_simple_grid_field15}","bold":true},
+			{"text":"{$jslabel Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 6_8_units }","hidden":"{$item_hide_simple_grid_field14}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -389,7 +386,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel enrollment_count_by_unit_and_batch 9_11_units }","hidden":"{$item_hide_simple_grid_field16}","bold":true},
+			{"text":"{$jslabel Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 9_11_units }","hidden":"{$item_hide_simple_grid_field15}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -418,7 +415,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel enrollment_count_by_unit_and_batch 12_14_units }","hidden":"{$item_hide_simple_grid_field17}","bold":true},
+			{"text":"{$jslabel Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 12_14_units }","hidden":"{$item_hide_simple_grid_field16}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -447,7 +444,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel enrollment_count_by_unit_and_batch 15_units_above }","hidden":"{$item_hide_simple_grid_field18}","bold":true},
+			{"text":"{$jslabel Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 15_units_above }","hidden":"{$item_hide_simple_grid_field17}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -476,7 +473,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel enrollment_count_by_unit_and_batch total }","hidden":"{$item_hide_simple_grid_field19}","bold":true},
+			{"text":"{$jslabel Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled total }","hidden":"{$item_hide_simple_grid_field18}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -491,7 +488,7 @@ pdfDocument = {
 	cellId: 'headcell_field9',
 	col:0,
 	row:0,
-			fieldName: 'career',
+			fieldName: 'college',
 				style: 'headcell',
 		
 		
@@ -505,45 +502,16 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel enrollment_count_by_unit_and_batch career }","hidden":"{$item_hide_simple_grid_field20}","bold":true},
+			{"text":"{$jslabel Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled college }","hidden":"{$item_hide_simple_grid_field19}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
-              "alignment": '{$career_align}',
+              "alignment": '{$college_align}',
      
       
       },
 
 {END cellblock_grid_headcell_field9}
-																							{BEGIN cellblock_grid_headcell_field10}
-{
-	cellId: 'headcell_field10',
-	col:0,
-	row:0,
-			fieldName: 'batch',
-				style: 'headcell',
-		
-		
-	//	dynamic colspan/rowspan
-
-		
-		
-	
-			
-	
-			"text": [
-		
-				
-			{"text":"{$jslabel enrollment_count_by_unit_and_batch batch }","hidden":"{$item_hide_simple_grid_field21}","bold":true},
-				
-		  ],
-  "border": [ true, true, true, true ],
-              "alignment": '{$batch_align}',
-     
-      
-      },
-
-{END cellblock_grid_headcell_field10}
 											],
 				{END row_grid_0}
 		
@@ -819,7 +787,7 @@ pdfDocument = {
 	cellId: 'cell_field9',
 	col:0,
 	row:0,
-			fieldName: 'career',
+			fieldName: 'college',
 				style: 'bodycell',
 		
 		
@@ -833,45 +801,16 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":{$career_pdfvalue},"hidden":"{$item_hide_simple_grid_field}"},
+			{"text":{$college_pdfvalue},"hidden":"{$item_hide_simple_grid_field}"},
 				
 		  ],
   "border": [ true, true, true, true ],
-              "alignment": '{$career_align}',
+              "alignment": '{$college_align}',
      
       
       },
 
 {END cellblock_grid_cell_field9}
-																							{BEGIN cellblock_grid_cell_field10}
-{
-	cellId: 'cell_field10',
-	col:0,
-	row:0,
-			fieldName: 'batch',
-				style: 'bodycell',
-		
-		
-	//	dynamic colspan/rowspan
-
-		
-		
-	
-			
-	
-			"text": [
-		
-				
-			{"text":{$batch_pdfvalue},"hidden":"{$item_hide_simple_grid_field2}"},
-				
-		  ],
-  "border": [ true, true, true, true ],
-              "alignment": '{$batch_align}',
-     
-      
-      },
-
-{END cellblock_grid_cell_field10}
 											],
 				{END row_grid_1}
 		
@@ -1141,32 +1080,6 @@ pdfDocument = {
       },
 
 {END cellblock_grid_footcell_field9}
-																							{BEGIN cellblock_grid_footcell_field10}
-{
-	cellId: 'footcell_field10',
-	col:0,
-	row:0,
-				style: 'footcell',
-		
-		
-	//	dynamic colspan/rowspan
-
-		
-		
-	
-			
-	
-			"text": [
-		
-				'',
-	  ],
-  "border": [ true, true, true, true ],
-              "alignment": 'left',
-     
-      
-      },
-
-{END cellblock_grid_footcell_field10}
 											],
 				{END row_grid_2}
 		

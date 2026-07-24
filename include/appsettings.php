@@ -753,9 +753,9 @@ $suggestAllContent = true;
 $strLastSQL = "";
 $showCustomMarkerOnPrint = false;
 
-$projectBuildKey = "41_1783414334";
+$projectBuildKey = "49_1783414334";
 $wizardBuildKey = "41974";
-$projectBuildNumber = "41";
+$projectBuildNumber = "49";
 
 $mlang_messages = array();
 $mlang_charsets = array();
@@ -784,9 +784,10 @@ $tableCaptions["English"][""] = "";
 $tableCaptions["English"]["public_ovcaa_rapid_users"] = "Ovcaa Rapid Users";
 $tableCaptions["English"]["Dashboard"] = "Dashboard";
 $tableCaptions["English"]["Enrollment_Status_Distribution"] = "Enrollment Status Distribution";
-$tableCaptions["English"]["enrollment_count_by_unit_and_batch"] = "Enrollment Count By Unit And Batch";
+$tableCaptions["English"]["enrollment_count_by_unit_and_batch"] = "Enrollment Distribution by Batch and Total Number of Units Enrolled";
 $tableCaptions["English"]["grade_submission_monitoring"] = "Grade Submission Monitoring";
 $tableCaptions["English"]["unposted_student_grades"] = "Unposted Student Grades";
+$tableCaptions["English"]["Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled"] = "Enrollment Distribution by Home College and Total Number of Units Enrolled";
 
 
 $globalEvents = new class_GlobalEvents;

@@ -249,7 +249,7 @@
 
 
 		<div class="form-group srchPanelRow {$filterRow_class_term_id}" {$filterRow_attrs_term_id}>
-			<label>{$label enrollment_count_by_unit_and_batch term_id }</label>
+			<label>{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled term_id }</label>
 
 							{$delCtrlButt}
 			
@@ -258,37 +258,24 @@
 								<span class="rnr-searchcontrol">{$searchcontrol1_term_id}</span>
 						</div>
 		{END searchCtrlBlock_term_id}
-																{BEGIN searchCtrlBlock_batch}
+																{BEGIN searchCtrlBlock_college}
 
 
-		<div class="form-group srchPanelRow {$filterRow_class_batch}" {$filterRow_attrs_batch}>
-			<label>{$label enrollment_count_by_unit_and_batch batch }</label>
-
-							{$delCtrlButt}
-			
-								<span class="rnr-searchtype">{$searchtype_batch}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol_batch}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_batch}</span>
-						</div>
-		{END searchCtrlBlock_batch}
-																{BEGIN searchCtrlBlock_career}
-
-
-		<div class="form-group srchPanelRow {$filterRow_class_career}" {$filterRow_attrs_career}>
-			<label>{$label enrollment_count_by_unit_and_batch career }</label>
+		<div class="form-group srchPanelRow {$filterRow_class_college}" {$filterRow_attrs_college}>
+			<label>{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled college }</label>
 
 							{$delCtrlButt}
 			
-								<span class="rnr-searchtype">{$searchtype_career}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol_career}</span>
-								<span class="rnr-searchcontrol">{$searchcontrol1_career}</span>
+								<span class="rnr-searchtype">{$searchtype_college}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_college}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_college}</span>
 						</div>
-		{END searchCtrlBlock_career}
+		{END searchCtrlBlock_college}
 																{BEGIN searchCtrlBlock_total}
 
 
 		<div class="form-group srchPanelRow {$filterRow_class_total}" {$filterRow_attrs_total}>
-			<label>{$label enrollment_count_by_unit_and_batch total }</label>
+			<label>{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled total }</label>
 
 							{$delCtrlButt}
 			
@@ -301,7 +288,7 @@
 
 
 		<div class="form-group srchPanelRow {$filterRow_class_15_units_above}" {$filterRow_attrs_15_units_above}>
-			<label>{$label enrollment_count_by_unit_and_batch 15_units_above }</label>
+			<label>{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 15_units_above }</label>
 
 							{$delCtrlButt}
 			
@@ -314,7 +301,7 @@
 
 
 		<div class="form-group srchPanelRow {$filterRow_class_12_14_units}" {$filterRow_attrs_12_14_units}>
-			<label>{$label enrollment_count_by_unit_and_batch 12_14_units }</label>
+			<label>{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 12_14_units }</label>
 
 							{$delCtrlButt}
 			
@@ -327,7 +314,7 @@
 
 
 		<div class="form-group srchPanelRow {$filterRow_class_9_11_units}" {$filterRow_attrs_9_11_units}>
-			<label>{$label enrollment_count_by_unit_and_batch 9_11_units }</label>
+			<label>{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 9_11_units }</label>
 
 							{$delCtrlButt}
 			
@@ -340,7 +327,7 @@
 
 
 		<div class="form-group srchPanelRow {$filterRow_class_6_8_units}" {$filterRow_attrs_6_8_units}>
-			<label>{$label enrollment_count_by_unit_and_batch 6_8_units }</label>
+			<label>{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 6_8_units }</label>
 
 							{$delCtrlButt}
 			
@@ -353,7 +340,7 @@
 
 
 		<div class="form-group srchPanelRow {$filterRow_class_3_5_units}" {$filterRow_attrs_3_5_units}>
-			<label>{$label enrollment_count_by_unit_and_batch 3_5_units }</label>
+			<label>{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 3_5_units }</label>
 
 							{$delCtrlButt}
 			
@@ -366,7 +353,7 @@
 
 
 		<div class="form-group srchPanelRow {$filterRow_class_1_2_units}" {$filterRow_attrs_1_2_units}>
-			<label>{$label enrollment_count_by_unit_and_batch 1_2_units }</label>
+			<label>{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 1_2_units }</label>
 
 							{$delCtrlButt}
 			
@@ -379,7 +366,7 @@
 
 
 		<div class="form-group srchPanelRow {$filterRow_class_0_units}" {$filterRow_attrs_0_units}>
-			<label>{$label enrollment_count_by_unit_and_batch 0_units }</label>
+			<label>{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 0_units }</label>
 
 							{$delCtrlButt}
 			
@@ -488,7 +475,7 @@
 	</li>
 {END exportselected_link}
 							<li role="separator" class="divider"></li>								<li data-itemtype="advsearch_link" data-itemid="advsearch_link" {$item_advsearch_link} data-pageid="{$pageid}" data-small >
-				<a   href="enrollment_count_by_unit_and_batch_search.php{$stateLink_full}" {$advsearchlink_attrs}  title="" >
+				<a   href="enrollment_distribution_by_home_college_and_total_number_of_units_enrolled_search.php{$stateLink_full}" {$advsearchlink_attrs}  title="" >
 				
 		Advanced search		
 		</a>
@@ -619,7 +606,7 @@
 		{BEGIN print_friendly_all}
 		<div class="col-md-8">
 			<label for="printAll{$id}">
-				<input type="radio" id="printAll{$id}" data-href="enrollment_count_by_unit_and_batch_print.php?all=1&amp;{$crosstable_attrs}" name="printScope" >
+				<input type="radio" id="printAll{$id}" data-href="enrollment_distribution_by_home_college_and_total_number_of_units_enrolled_print.php?all=1&amp;{$crosstable_attrs}" name="printScope" >
 									Print all pages							</label>
 		</div>
 		{END print_friendly_all}
@@ -628,7 +615,7 @@
 		<div class="col-md-4">&nbsp;</div>
 		<div class="col-md-8">
 			<label for="printPage{$id}">
-				<input name="printScope" id="printPage{$id}" type="radio" checked data-href="enrollment_count_by_unit_and_batch_print.php?{$crosstable_attrs}">
+				<input name="printScope" id="printPage{$id}" type="radio" checked data-href="enrollment_distribution_by_home_college_and_total_number_of_units_enrolled_print.php?{$crosstable_attrs}">
 				Print this page			</label>
 		</div>
 	</div>
@@ -679,38 +666,35 @@
 <div data-grid-message data-pageid="{$pageid}" class="alert {$message_class}" role="alert" {$grid_message_attrs}>{$message}</div>
 {END message_block}	<style>
 @media screen and (max-width: 767px) {
-		[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="career"]:before {
-		content: "{$label enrollment_count_by_unit_and_batch career}";
-	}
-			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="batch"]:before {
-		content: "{$label enrollment_count_by_unit_and_batch batch}";
+		[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="college"]:before {
+		content: "{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled college}";
 	}
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="0_units"]:before {
-		content: "{$label enrollment_count_by_unit_and_batch 0_units}";
+		content: "{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 0_units}";
 	}
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="1_2_units"]:before {
-		content: "{$label enrollment_count_by_unit_and_batch 1_2_units}";
+		content: "{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 1_2_units}";
 	}
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="3_5_units"]:before {
-		content: "{$label enrollment_count_by_unit_and_batch 3_5_units}";
+		content: "{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 3_5_units}";
 	}
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="6_8_units"]:before {
-		content: "{$label enrollment_count_by_unit_and_batch 6_8_units}";
+		content: "{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 6_8_units}";
 	}
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="9_11_units"]:before {
-		content: "{$label enrollment_count_by_unit_and_batch 9_11_units}";
+		content: "{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 9_11_units}";
 	}
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="12_14_units"]:before {
-		content: "{$label enrollment_count_by_unit_and_batch 12_14_units}";
+		content: "{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 12_14_units}";
 	}
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="15_units_above"]:before {
-		content: "{$label enrollment_count_by_unit_and_batch 15_units_above}";
+		content: "{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 15_units_above}";
 	}
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="total"]:before {
-		content: "{$label enrollment_count_by_unit_and_batch total}";
+		content: "{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled total}";
 	}
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="term_id"]:before {
-		content: "{$label enrollment_count_by_unit_and_batch term_id}";
+		content: "{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled term_id}";
 	}
 	}
 </style>
@@ -735,7 +719,7 @@
 		 r-ori-vert			"
 
 	
-	data-cellId="grid_headcell_checkbox" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_count_by_unit_and_batch_list"	
+	data-cellId="grid_headcell_checkbox" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_distribution_by_home_college_and_total_number_of_units_enrolled_list"	
 		data-checkbox-cell
 	>
 
@@ -765,14 +749,14 @@
 		{BEGIN term_id_fieldheadercolumn}
 	{BEGIN term_id_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field11" {$item_simple_grid_field11} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="term_id" data-fieldname="term_id" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field2" {$item_simple_grid_field2} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="term_id" data-fieldname="term_id" 
 
 			{$term_id_orderlinkattrs}
 	
 	
 	>
 	<span class="text-label">
-		<span>{$label enrollment_count_by_unit_and_batch term_id }</span>
+		<span>{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled term_id }</span>
 					{$arrow_icon_term_id}
 			</span>
 	</span>
@@ -788,30 +772,30 @@
 	{$cell_grid_headcell_field1}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$career_class}	"
+		 r-ori-vert		 {$college_class}	"
 
-			data-field="career"
+			data-field="college"
 	
 	data-cellId="grid_headcell_field1" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN career_fieldheadercolumn}
-	{BEGIN career_fieldheader}
+		{BEGIN college_fieldheadercolumn}
+	{BEGIN college_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field12" {$item_simple_grid_field12} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="career" data-fieldname="career" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field11" {$item_simple_grid_field11} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="college" data-fieldname="college" 
 
-			{$career_orderlinkattrs}
+			{$college_orderlinkattrs}
 	
 	
 	>
 	<span class="text-label">
-		<span>{$label enrollment_count_by_unit_and_batch career }</span>
-					{$arrow_icon_career}
+		<span>{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled college }</span>
+					{$arrow_icon_college}
 			</span>
 	</span>
-	{END career_fieldheader}
-{END career_fieldheadercolumn}
+	{END college_fieldheader}
+{END college_fieldheadercolumn}
 
 	
 	</th>
@@ -822,30 +806,30 @@
 	{$cell_grid_headcell_field2}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$batch_class}	"
+		 r-ori-vert		 {$0_units_class}	"
 
-			data-field="batch"
+			data-field="0_units"
 	
 	data-cellId="grid_headcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN batch_fieldheadercolumn}
-	{BEGIN batch_fieldheader}
+		{BEGIN 0_units_fieldheadercolumn}
+	{BEGIN 0_units_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field13" {$item_simple_grid_field13} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="batch" data-fieldname="batch" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field12" {$item_simple_grid_field12} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="0_units" data-fieldname="0 units" 
 
-			{$batch_orderlinkattrs}
+			{$0_units_orderlinkattrs}
 	
 	
 	>
 	<span class="text-label">
-		<span>{$label enrollment_count_by_unit_and_batch batch }</span>
-					{$arrow_icon_batch}
+		<span>{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 0_units }</span>
+					{$arrow_icon_0_units}
 			</span>
 	</span>
-	{END batch_fieldheader}
-{END batch_fieldheadercolumn}
+	{END 0_units_fieldheader}
+{END 0_units_fieldheadercolumn}
 
 	
 	</th>
@@ -856,30 +840,30 @@
 	{$cell_grid_headcell_field3}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$0_units_class}	"
+		 r-ori-vert		 {$1_2_units_class}	"
 
-			data-field="0_units"
+			data-field="1_2_units"
 	
 	data-cellId="grid_headcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN 0_units_fieldheadercolumn}
-	{BEGIN 0_units_fieldheader}
+		{BEGIN 1_2_units_fieldheadercolumn}
+	{BEGIN 1_2_units_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field14" {$item_simple_grid_field14} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="0_units" data-fieldname="0 units" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field13" {$item_simple_grid_field13} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="1_2_units" data-fieldname="1-2 units" 
 
-			{$0_units_orderlinkattrs}
+			{$1_2_units_orderlinkattrs}
 	
 	
 	>
 	<span class="text-label">
-		<span>{$label enrollment_count_by_unit_and_batch 0_units }</span>
-					{$arrow_icon_0_units}
+		<span>{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 1_2_units }</span>
+					{$arrow_icon_1_2_units}
 			</span>
 	</span>
-	{END 0_units_fieldheader}
-{END 0_units_fieldheadercolumn}
+	{END 1_2_units_fieldheader}
+{END 1_2_units_fieldheadercolumn}
 
 	
 	</th>
@@ -890,30 +874,30 @@
 	{$cell_grid_headcell_field4}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$1_2_units_class}	"
+		 r-ori-vert		 {$3_5_units_class}	"
 
-			data-field="1_2_units"
+			data-field="3_5_units"
 	
 	data-cellId="grid_headcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN 1_2_units_fieldheadercolumn}
-	{BEGIN 1_2_units_fieldheader}
+		{BEGIN 3_5_units_fieldheadercolumn}
+	{BEGIN 3_5_units_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field15" {$item_simple_grid_field15} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="1_2_units" data-fieldname="1-2 units" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field14" {$item_simple_grid_field14} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="3_5_units" data-fieldname="3-5 units" 
 
-			{$1_2_units_orderlinkattrs}
+			{$3_5_units_orderlinkattrs}
 	
 	
 	>
 	<span class="text-label">
-		<span>{$label enrollment_count_by_unit_and_batch 1_2_units }</span>
-					{$arrow_icon_1_2_units}
+		<span>{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 3_5_units }</span>
+					{$arrow_icon_3_5_units}
 			</span>
 	</span>
-	{END 1_2_units_fieldheader}
-{END 1_2_units_fieldheadercolumn}
+	{END 3_5_units_fieldheader}
+{END 3_5_units_fieldheadercolumn}
 
 	
 	</th>
@@ -924,30 +908,30 @@
 	{$cell_grid_headcell_field5}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$3_5_units_class}	"
+		 r-ori-vert		 {$6_8_units_class}	"
 
-			data-field="3_5_units"
+			data-field="6_8_units"
 	
 	data-cellId="grid_headcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN 3_5_units_fieldheadercolumn}
-	{BEGIN 3_5_units_fieldheader}
+		{BEGIN 6_8_units_fieldheadercolumn}
+	{BEGIN 6_8_units_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field16" {$item_simple_grid_field16} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="3_5_units" data-fieldname="3-5 units" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field15" {$item_simple_grid_field15} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="6_8_units" data-fieldname="6-8 units" 
 
-			{$3_5_units_orderlinkattrs}
+			{$6_8_units_orderlinkattrs}
 	
 	
 	>
 	<span class="text-label">
-		<span>{$label enrollment_count_by_unit_and_batch 3_5_units }</span>
-					{$arrow_icon_3_5_units}
+		<span>{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 6_8_units }</span>
+					{$arrow_icon_6_8_units}
 			</span>
 	</span>
-	{END 3_5_units_fieldheader}
-{END 3_5_units_fieldheadercolumn}
+	{END 6_8_units_fieldheader}
+{END 6_8_units_fieldheadercolumn}
 
 	
 	</th>
@@ -958,30 +942,30 @@
 	{$cell_grid_headcell_field6}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$6_8_units_class}	"
+		 r-ori-vert		 {$9_11_units_class}	"
 
-			data-field="6_8_units"
+			data-field="9_11_units"
 	
 	data-cellId="grid_headcell_field6" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN 6_8_units_fieldheadercolumn}
-	{BEGIN 6_8_units_fieldheader}
+		{BEGIN 9_11_units_fieldheadercolumn}
+	{BEGIN 9_11_units_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field17" {$item_simple_grid_field17} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="6_8_units" data-fieldname="6-8 units" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field16" {$item_simple_grid_field16} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="9_11_units" data-fieldname="9-11 units" 
 
-			{$6_8_units_orderlinkattrs}
+			{$9_11_units_orderlinkattrs}
 	
 	
 	>
 	<span class="text-label">
-		<span>{$label enrollment_count_by_unit_and_batch 6_8_units }</span>
-					{$arrow_icon_6_8_units}
+		<span>{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 9_11_units }</span>
+					{$arrow_icon_9_11_units}
 			</span>
 	</span>
-	{END 6_8_units_fieldheader}
-{END 6_8_units_fieldheadercolumn}
+	{END 9_11_units_fieldheader}
+{END 9_11_units_fieldheadercolumn}
 
 	
 	</th>
@@ -992,30 +976,30 @@
 	{$cell_grid_headcell_field7}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$9_11_units_class}	"
+		 r-ori-vert		 {$12_14_units_class}	"
 
-			data-field="9_11_units"
+			data-field="12_14_units"
 	
 	data-cellId="grid_headcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN 9_11_units_fieldheadercolumn}
-	{BEGIN 9_11_units_fieldheader}
+		{BEGIN 12_14_units_fieldheadercolumn}
+	{BEGIN 12_14_units_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field18" {$item_simple_grid_field18} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="9_11_units" data-fieldname="9-11 units" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field17" {$item_simple_grid_field17} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="12_14_units" data-fieldname="12-14 units" 
 
-			{$9_11_units_orderlinkattrs}
+			{$12_14_units_orderlinkattrs}
 	
 	
 	>
 	<span class="text-label">
-		<span>{$label enrollment_count_by_unit_and_batch 9_11_units }</span>
-					{$arrow_icon_9_11_units}
+		<span>{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 12_14_units }</span>
+					{$arrow_icon_12_14_units}
 			</span>
 	</span>
-	{END 9_11_units_fieldheader}
-{END 9_11_units_fieldheadercolumn}
+	{END 12_14_units_fieldheader}
+{END 12_14_units_fieldheadercolumn}
 
 	
 	</th>
@@ -1026,30 +1010,30 @@
 	{$cell_grid_headcell_field8}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$12_14_units_class}	"
+		 r-ori-vert		 {$15_units_above_class}	"
 
-			data-field="12_14_units"
+			data-field="15_units_above"
 	
 	data-cellId="grid_headcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN 12_14_units_fieldheadercolumn}
-	{BEGIN 12_14_units_fieldheader}
+		{BEGIN 15_units_above_fieldheadercolumn}
+	{BEGIN 15_units_above_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field19" {$item_simple_grid_field19} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="12_14_units" data-fieldname="12-14 units" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field18" {$item_simple_grid_field18} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="15_units_above" data-fieldname="15 units above" 
 
-			{$12_14_units_orderlinkattrs}
+			{$15_units_above_orderlinkattrs}
 	
 	
 	>
 	<span class="text-label">
-		<span>{$label enrollment_count_by_unit_and_batch 12_14_units }</span>
-					{$arrow_icon_12_14_units}
+		<span>{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled 15_units_above }</span>
+					{$arrow_icon_15_units_above}
 			</span>
 	</span>
-	{END 12_14_units_fieldheader}
-{END 12_14_units_fieldheadercolumn}
+	{END 15_units_above_fieldheader}
+{END 15_units_above_fieldheadercolumn}
 
 	
 	</th>
@@ -1060,59 +1044,25 @@
 	{$cell_grid_headcell_field9}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$15_units_above_class}	"
-
-			data-field="15_units_above"
-	
-	data-cellId="grid_headcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}"	
-	>
-
-	 
-		{BEGIN 15_units_above_fieldheadercolumn}
-	{BEGIN 15_units_above_fieldheader}
-<span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field20" {$item_simple_grid_field20} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="15_units_above" data-fieldname="15 units above" 
-
-			{$15_units_above_orderlinkattrs}
-	
-	
-	>
-	<span class="text-label">
-		<span>{$label enrollment_count_by_unit_and_batch 15_units_above }</span>
-					{$arrow_icon_15_units_above}
-			</span>
-	</span>
-	{END 15_units_above_fieldheader}
-{END 15_units_above_fieldheadercolumn}
-
-	
-	</th>
-	{END cellblock_grid_headcell_field9}
-									{BEGIN cellblock_grid_headcell_field10}
-	<th
-	
-	{$cell_grid_headcell_field10}
-	{$recordattrs}
-	class="
 		 r-ori-vert		 {$total_class}	"
 
 			data-field="total"
 	
-	data-cellId="grid_headcell_field10" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
 		{BEGIN total_fieldheadercolumn}
 	{BEGIN total_fieldheader}
 <span 
-	data-itemtype="grid_field_label" data-itemid="simple_grid_field21" {$item_simple_grid_field21} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="total" data-fieldname="total" 
+	data-itemtype="grid_field_label" data-itemid="simple_grid_field19" {$item_simple_grid_field19} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="total" data-fieldname="total" 
 
 			{$total_orderlinkattrs}
 	
 	
 	>
 	<span class="text-label">
-		<span>{$label enrollment_count_by_unit_and_batch total }</span>
+		<span>{$label Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled total }</span>
 					{$arrow_icon_total}
 			</span>
 	</span>
@@ -1121,7 +1071,7 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field10}
+	{END cellblock_grid_headcell_field9}
 							</tr>
 															
 					{END grid_header}
@@ -1184,19 +1134,19 @@
 	{$cell_grid_cell_field1}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$career_class}	"
+		 r-ori-vert		 {$college_class}	"
 
-			data-field="career"
+			data-field="college"
 	
 	data-cellId="grid_cell_field1" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN career_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="simple_grid_field" {$item_simple_grid_field} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="career" data-fieldname="career" data-default-width >
-{$career_value}
+		{BEGIN college_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="simple_grid_field" {$item_simple_grid_field} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="college" data-fieldname="college" data-default-width >
+{$college_value}
 </span>
-{END career_fieldcolumn}	
+{END college_fieldcolumn}	
 	</td>
 	{END cellblock_grid_cell_field1}
 									{BEGIN cellblock_grid_cell_field2}
@@ -1205,32 +1155,11 @@
 	{$cell_grid_cell_field2}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$batch_class}	"
-
-			data-field="batch"
-	
-	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
-	>
-
-	 
-		{BEGIN batch_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="simple_grid_field2" {$item_simple_grid_field2} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="batch" data-fieldname="batch" data-default-width >
-{$batch_value}
-</span>
-{END batch_fieldcolumn}	
-	</td>
-	{END cellblock_grid_cell_field2}
-									{BEGIN cellblock_grid_cell_field3}
-	<td
-	
-	{$cell_grid_cell_field3}
-	{$recordattrs}
-	class="
 		 r-ori-vert		 {$0_units_class}	"
 
 			data-field="0_units"
 	
-	data-cellId="grid_cell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1240,18 +1169,18 @@
 </span>
 {END 0_units_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field3}
-									{BEGIN cellblock_grid_cell_field4}
+	{END cellblock_grid_cell_field2}
+									{BEGIN cellblock_grid_cell_field3}
 	<td
 	
-	{$cell_grid_cell_field4}
+	{$cell_grid_cell_field3}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$1_2_units_class}	"
 
 			data-field="1_2_units"
 	
-	data-cellId="grid_cell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1261,18 +1190,18 @@
 </span>
 {END 1_2_units_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field4}
-									{BEGIN cellblock_grid_cell_field5}
+	{END cellblock_grid_cell_field3}
+									{BEGIN cellblock_grid_cell_field4}
 	<td
 	
-	{$cell_grid_cell_field5}
+	{$cell_grid_cell_field4}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$3_5_units_class}	"
 
 			data-field="3_5_units"
 	
-	data-cellId="grid_cell_field5" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1282,18 +1211,18 @@
 </span>
 {END 3_5_units_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field5}
-									{BEGIN cellblock_grid_cell_field6}
+	{END cellblock_grid_cell_field4}
+									{BEGIN cellblock_grid_cell_field5}
 	<td
 	
-	{$cell_grid_cell_field6}
+	{$cell_grid_cell_field5}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$6_8_units_class}	"
 
 			data-field="6_8_units"
 	
-	data-cellId="grid_cell_field6" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field5" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1303,18 +1232,18 @@
 </span>
 {END 6_8_units_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field6}
-									{BEGIN cellblock_grid_cell_field7}
+	{END cellblock_grid_cell_field5}
+									{BEGIN cellblock_grid_cell_field6}
 	<td
 	
-	{$cell_grid_cell_field7}
+	{$cell_grid_cell_field6}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$9_11_units_class}	"
 
 			data-field="9_11_units"
 	
-	data-cellId="grid_cell_field7" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field6" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1324,18 +1253,18 @@
 </span>
 {END 9_11_units_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field7}
-									{BEGIN cellblock_grid_cell_field8}
+	{END cellblock_grid_cell_field6}
+									{BEGIN cellblock_grid_cell_field7}
 	<td
 	
-	{$cell_grid_cell_field8}
+	{$cell_grid_cell_field7}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$12_14_units_class}	"
 
 			data-field="12_14_units"
 	
-	data-cellId="grid_cell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field7" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1345,18 +1274,18 @@
 </span>
 {END 12_14_units_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field8}
-									{BEGIN cellblock_grid_cell_field9}
+	{END cellblock_grid_cell_field7}
+									{BEGIN cellblock_grid_cell_field8}
 	<td
 	
-	{$cell_grid_cell_field9}
+	{$cell_grid_cell_field8}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$15_units_above_class}	"
 
 			data-field="15_units_above"
 	
-	data-cellId="grid_cell_field9" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1366,18 +1295,18 @@
 </span>
 {END 15_units_above_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field9}
-									{BEGIN cellblock_grid_cell_field10}
+	{END cellblock_grid_cell_field8}
+									{BEGIN cellblock_grid_cell_field9}
 	<td
 	
-	{$cell_grid_cell_field10}
+	{$cell_grid_cell_field9}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$total_class}	"
 
 			data-field="total"
 	
-	data-cellId="grid_cell_field10" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field9" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1387,7 +1316,7 @@
 </span>
 {END total_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field10}
+	{END cellblock_grid_cell_field9}
 							</tr>
 										
 											{END grid_row}
@@ -1424,7 +1353,7 @@
 		 r-ori-vert		 {$term_id_class}	"
 
 	
-	data-cellId="grid_footcell_field" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_count_by_unit_and_batch_list"		data-control-cell
+	data-cellId="grid_footcell_field" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_distribution_by_home_college_and_total_number_of_units_enrolled_list"		data-control-cell
 	
 	>
 
@@ -1437,10 +1366,10 @@
 	{$cell_grid_footcell_field1}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$career_class}	"
+		 r-ori-vert		 {$college_class}	"
 
 	
-	data-cellId="grid_footcell_field1" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_count_by_unit_and_batch_list"		data-control-cell
+	data-cellId="grid_footcell_field1" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_distribution_by_home_college_and_total_number_of_units_enrolled_list"		data-control-cell
 	
 	>
 
@@ -1453,10 +1382,10 @@
 	{$cell_grid_footcell_field2}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$batch_class}	"
+		 r-ori-vert		 {$0_units_class}	"
 
 	
-	data-cellId="grid_footcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_count_by_unit_and_batch_list"		data-control-cell
+	data-cellId="grid_footcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_distribution_by_home_college_and_total_number_of_units_enrolled_list"		data-control-cell
 	
 	>
 
@@ -1469,10 +1398,10 @@
 	{$cell_grid_footcell_field3}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$0_units_class}	"
+		 r-ori-vert		 {$1_2_units_class}	"
 
 	
-	data-cellId="grid_footcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_count_by_unit_and_batch_list"		data-control-cell
+	data-cellId="grid_footcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_distribution_by_home_college_and_total_number_of_units_enrolled_list"		data-control-cell
 	
 	>
 
@@ -1485,10 +1414,10 @@
 	{$cell_grid_footcell_field4}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$1_2_units_class}	"
+		 r-ori-vert		 {$3_5_units_class}	"
 
 	
-	data-cellId="grid_footcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_count_by_unit_and_batch_list"		data-control-cell
+	data-cellId="grid_footcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_distribution_by_home_college_and_total_number_of_units_enrolled_list"		data-control-cell
 	
 	>
 
@@ -1501,10 +1430,10 @@
 	{$cell_grid_footcell_field5}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$3_5_units_class}	"
+		 r-ori-vert		 {$6_8_units_class}	"
 
 	
-	data-cellId="grid_footcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_count_by_unit_and_batch_list"		data-control-cell
+	data-cellId="grid_footcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_distribution_by_home_college_and_total_number_of_units_enrolled_list"		data-control-cell
 	
 	>
 
@@ -1517,10 +1446,10 @@
 	{$cell_grid_footcell_field6}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$6_8_units_class}	"
+		 r-ori-vert		 {$9_11_units_class}	"
 
 	
-	data-cellId="grid_footcell_field6" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_count_by_unit_and_batch_list"		data-control-cell
+	data-cellId="grid_footcell_field6" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_distribution_by_home_college_and_total_number_of_units_enrolled_list"		data-control-cell
 	
 	>
 
@@ -1533,10 +1462,10 @@
 	{$cell_grid_footcell_field7}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$9_11_units_class}	"
+		 r-ori-vert		 {$12_14_units_class}	"
 
 	
-	data-cellId="grid_footcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_count_by_unit_and_batch_list"		data-control-cell
+	data-cellId="grid_footcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_distribution_by_home_college_and_total_number_of_units_enrolled_list"		data-control-cell
 	
 	>
 
@@ -1549,10 +1478,10 @@
 	{$cell_grid_footcell_field8}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$12_14_units_class}	"
+		 r-ori-vert		 {$15_units_above_class}	"
 
 	
-	data-cellId="grid_footcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_count_by_unit_and_batch_list"		data-control-cell
+	data-cellId="grid_footcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_distribution_by_home_college_and_total_number_of_units_enrolled_list"		data-control-cell
 	
 	>
 
@@ -1565,33 +1494,17 @@
 	{$cell_grid_footcell_field9}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$15_units_above_class}	"
-
-	
-	data-cellId="grid_footcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_count_by_unit_and_batch_list"		data-control-cell
-	
-	>
-
-	
-	</td>
-	{END cellblock_grid_footcell_field9}
-									{BEGIN cellblock_grid_footcell_field10}
-	<td
-	
-	{$cell_grid_footcell_field10}
-	{$recordattrs}
-	class="
 		 r-ori-vert		 {$total_class}	"
 
 			data-field="total"
 	
-	data-cellId="grid_footcell_field10" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_count_by_unit_and_batch_list"	
+	data-cellId="grid_footcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="enrollment_distribution_by_home_college_and_total_number_of_units_enrolled_list"	
 	>
 
 	 
 		{BEGIN total_fieldfootercolumn}
 {BEGIN total_showtotal}
-<span data-itemtype="grid_field_totals" data-itemid="simple_grid_field22" {$item_simple_grid_field22} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="total" data-fieldname="total">
+<span data-itemtype="grid_field_totals" data-itemid="simple_grid_field20" {$item_simple_grid_field20} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="total" data-fieldname="total">
 	Total	{$total_total}
 </span>
 {END total_showtotal}
@@ -1599,7 +1512,7 @@
 
 	
 	</td>
-	{END cellblock_grid_footcell_field10}
+	{END cellblock_grid_footcell_field9}
 							</tr>
 					
 					</tfoot>

@@ -28,12 +28,6 @@ if(mlang_getcurrentlang()=="English")
 	$fieldLabelsenrollment_count_by_unit_and_batch["English"]["term_id"] = "Term Id";
 	$fieldToolTipsenrollment_count_by_unit_and_batch["English"]["term_id"] = "";
 	$placeHoldersenrollment_count_by_unit_and_batch["English"]["term_id"] = "";
-	$fieldLabelsenrollment_count_by_unit_and_batch["English"]["career"] = "Career";
-	$fieldToolTipsenrollment_count_by_unit_and_batch["English"]["career"] = "";
-	$placeHoldersenrollment_count_by_unit_and_batch["English"]["career"] = "";
-	$fieldLabelsenrollment_count_by_unit_and_batch["English"]["batch"] = "Batch";
-	$fieldToolTipsenrollment_count_by_unit_and_batch["English"]["batch"] = "";
-	$placeHoldersenrollment_count_by_unit_and_batch["English"]["batch"] = "";
 	$fieldLabelsenrollment_count_by_unit_and_batch["English"]["0_units"] = "0 Units";
 	$fieldToolTipsenrollment_count_by_unit_and_batch["English"]["0_units"] = "";
 	$placeHoldersenrollment_count_by_unit_and_batch["English"]["0_units"] = "";
@@ -58,6 +52,12 @@ if(mlang_getcurrentlang()=="English")
 	$fieldLabelsenrollment_count_by_unit_and_batch["English"]["total"] = "Total";
 	$fieldToolTipsenrollment_count_by_unit_and_batch["English"]["total"] = "";
 	$placeHoldersenrollment_count_by_unit_and_batch["English"]["total"] = "";
+	$fieldLabelsenrollment_count_by_unit_and_batch["English"]["career"] = "Career";
+	$fieldToolTipsenrollment_count_by_unit_and_batch["English"]["career"] = "";
+	$placeHoldersenrollment_count_by_unit_and_batch["English"]["career"] = "";
+	$fieldLabelsenrollment_count_by_unit_and_batch["English"]["batch"] = "Batch";
+	$fieldToolTipsenrollment_count_by_unit_and_batch["English"]["batch"] = "";
+	$placeHoldersenrollment_count_by_unit_and_batch["English"]["batch"] = "";
 	if (count($fieldToolTipsenrollment_count_by_unit_and_batch["English"]))
 		$tdataenrollment_count_by_unit_and_batch[".isUseToolTips"] = true;
 }
@@ -220,7 +220,7 @@ $tdataenrollment_count_by_unit_and_batch[".orderindexes"] = array();
 
 
 $tdataenrollment_count_by_unit_and_batch[".sqlHead"] = "select case   	when enl.acad_group = 'GS'then 'GRAD'  	else 'UGRD'  end  career,  case    when enl.acad_group = 'GS' then 'ALL'    when cast(LEFT(ac.student_id,4) as integer) <= cast(LEFT(st.ay,4) as integer) - 4      then cast(LEFT(st.ay,4) as integer) - 4 || ' and below'    else LEFT(ac.student_id,4)::TEXT  end as batch,  count(case when enl.total_enrl=0 then 1 END) \"0 units\"  ,count(case when enl.total_enrl>=1 and enl.total_enrl<=2 then 1 END) \"1-2 units\"  ,count(case when enl.total_enrl>=3 and enl.total_enrl<=5 then 1 END) \"3-5 units\"  ,count(case when enl.total_enrl>=6 and enl.total_enrl<=8 then 1 END) \"6-8 units\"  ,count(case when enl.total_enrl>=9 and enl.total_enrl<=11 then 1 END) \"9-11 units\"  ,count(case when enl.total_enrl>=12 and enl.total_enrl<=14 then 1 END) \"12-14 units\"  ,count(case when enl.total_enrl>=15 then 1 END) \"15 units above\"  ,count(enl.total_enrl) total  ,ac.term_id";
-$tdataenrollment_count_by_unit_and_batch[".sqlFrom"] = "from (select student_id,term_id,status from student_enlistments group by student_id,term_id,status) ac   join (  SELECT student_id, spr.acad_group, sum(credit) total_enrl,se.term_id FROM student_enlistments se  JOIN student_enlist_classes sec ON sec.student_enlistment_id = se.id AND sec.status IN ('Enlisted','Finalized')  JOIN classes cl ON cl.id = sec.class_id AND cl.term_id=se.term_id  JOIN student_program_records spr ON spr.campus_id = se.student_id  AND spr.status='ACTIVE'    GROUP BY student_id, spr.acad_group,se.term_id   ) enl on ac.student_id=enl.student_id and ac.term_id = enl.term_id  JOIN student_terms st on st.term_id = ac.term_id";
+$tdataenrollment_count_by_unit_and_batch[".sqlFrom"] = "from (select student_id,term_id,status from student_enlistments group by student_id,term_id,status) ac   join (  SELECT student_id, spr.acad_group, sum(credit) total_enrl,se.term_id FROM student_enlistments se  JOIN student_enlist_classes sec ON sec.student_enlistment_id = se.id AND sec.status IN ('Enlisted','Finalized')  JOIN classes cl ON cl.id = sec.class_id AND cl.term_id=se.term_id  JOIN student_program_history_view spr ON spr.campus_id = se.student_id  AND spr.term_admitted <= se.term_id   AND (spr.term_end IS NULL OR spr.term_end > se.term_id)    GROUP BY student_id, spr.acad_group,se.term_id   ) enl on ac.student_id=enl.student_id and ac.term_id = enl.term_id  JOIN student_terms st on st.term_id = ac.term_id";
 $tdataenrollment_count_by_unit_and_batch[".sqlWhereExpr"] = "ac.term_id = :session.term_id";
 $tdataenrollment_count_by_unit_and_batch[".sqlTail"] = "";
 
@@ -1846,7 +1846,7 @@ function createSqlQuery_enrollment_count_by_unit_and_batch()
 $proto0=array();
 $proto0["m_strHead"] = "select";
 $proto0["m_strFieldList"] = "case   	when enl.acad_group = 'GS'then 'GRAD'  	else 'UGRD'  end  career,  case    when enl.acad_group = 'GS' then 'ALL'    when cast(LEFT(ac.student_id,4) as integer) <= cast(LEFT(st.ay,4) as integer) - 4      then cast(LEFT(st.ay,4) as integer) - 4 || ' and below'    else LEFT(ac.student_id,4)::TEXT  end as batch,  count(case when enl.total_enrl=0 then 1 END) \"0 units\"  ,count(case when enl.total_enrl>=1 and enl.total_enrl<=2 then 1 END) \"1-2 units\"  ,count(case when enl.total_enrl>=3 and enl.total_enrl<=5 then 1 END) \"3-5 units\"  ,count(case when enl.total_enrl>=6 and enl.total_enrl<=8 then 1 END) \"6-8 units\"  ,count(case when enl.total_enrl>=9 and enl.total_enrl<=11 then 1 END) \"9-11 units\"  ,count(case when enl.total_enrl>=12 and enl.total_enrl<=14 then 1 END) \"12-14 units\"  ,count(case when enl.total_enrl>=15 then 1 END) \"15 units above\"  ,count(enl.total_enrl) total  ,ac.term_id";
-$proto0["m_strFrom"] = "from (select student_id,term_id,status from student_enlistments group by student_id,term_id,status) ac   join (  SELECT student_id, spr.acad_group, sum(credit) total_enrl,se.term_id FROM student_enlistments se  JOIN student_enlist_classes sec ON sec.student_enlistment_id = se.id AND sec.status IN ('Enlisted','Finalized')  JOIN classes cl ON cl.id = sec.class_id AND cl.term_id=se.term_id  JOIN student_program_records spr ON spr.campus_id = se.student_id  AND spr.status='ACTIVE'    GROUP BY student_id, spr.acad_group,se.term_id   ) enl on ac.student_id=enl.student_id and ac.term_id = enl.term_id  JOIN student_terms st on st.term_id = ac.term_id";
+$proto0["m_strFrom"] = "from (select student_id,term_id,status from student_enlistments group by student_id,term_id,status) ac   join (  SELECT student_id, spr.acad_group, sum(credit) total_enrl,se.term_id FROM student_enlistments se  JOIN student_enlist_classes sec ON sec.student_enlistment_id = se.id AND sec.status IN ('Enlisted','Finalized')  JOIN classes cl ON cl.id = sec.class_id AND cl.term_id=se.term_id  JOIN student_program_history_view spr ON spr.campus_id = se.student_id  AND spr.term_admitted <= se.term_id   AND (spr.term_end IS NULL OR spr.term_end > se.term_id)    GROUP BY student_id, spr.acad_group,se.term_id   ) enl on ac.student_id=enl.student_id and ac.term_id = enl.term_id  JOIN student_terms st on st.term_id = ac.term_id";
 $proto0["m_strWhere"] = "ac.term_id = :session.term_id";
 $proto0["m_strOrderBy"] = "order by career desc,batch ASC";
 	
@@ -2271,7 +2271,7 @@ $proto61["m_link"] = "SQLL_INNERJOIN";
 			$proto62=array();
 $proto62["m_strHead"] = "  SELECT";
 $proto62["m_strFieldList"] = "student_id, spr.acad_group, sum(credit) total_enrl,se.term_id";
-$proto62["m_strFrom"] = "FROM student_enlistments se  JOIN student_enlist_classes sec ON sec.student_enlistment_id = se.id AND sec.status IN ('Enlisted','Finalized')  JOIN classes cl ON cl.id = sec.class_id AND cl.term_id=se.term_id  JOIN student_program_records spr ON spr.campus_id = se.student_id  AND spr.status='ACTIVE'";
+$proto62["m_strFrom"] = "FROM student_enlistments se  JOIN student_enlist_classes sec ON sec.student_enlistment_id = se.id AND sec.status IN ('Enlisted','Finalized')  JOIN classes cl ON cl.id = sec.class_id AND cl.term_id=se.term_id  JOIN student_program_history_view spr ON spr.campus_id = se.student_id  AND spr.term_admitted <= se.term_id   AND (spr.term_end IS NULL OR spr.term_end > se.term_id)";
 $proto62["m_strWhere"] = "";
 $proto62["m_strOrderBy"] = "";
 	
@@ -2595,7 +2595,7 @@ $proto62["m_fromlist"][]=$obj;
 												$proto97=array();
 $proto97["m_link"] = "SQLL_INNERJOIN";
 			$proto98=array();
-$proto98["m_strName"] = "public.student_program_records";
+$proto98["m_strName"] = "public.student_program_history_view";
 $proto98["m_srcTableName"] = "enrollment_count_by_unit_and_batch";
 $proto98["m_columns"] = array();
 $proto98["m_columns"][] = "student_program_record_id";
@@ -2610,17 +2610,18 @@ $proto98["m_columns"][] = "acad_org";
 $proto98["m_columns"][] = "term_admitted";
 $proto98["m_columns"][] = "first_registration";
 $proto98["m_columns"][] = "classification";
+$proto98["m_columns"][] = "term_end";
 $obj = new SQLTable($proto98);
 
 $proto97["m_table"] = $obj;
-$proto97["m_sql"] = "JOIN student_program_records spr ON spr.campus_id = se.student_id  AND spr.status='ACTIVE'";
+$proto97["m_sql"] = "JOIN student_program_history_view spr ON spr.campus_id = se.student_id  AND spr.term_admitted <= se.term_id   AND (spr.term_end IS NULL OR spr.term_end > se.term_id)";
 $proto97["m_alias"] = "spr";
 $proto97["m_srcTableName"] = "enrollment_count_by_unit_and_batch";
 $proto99=array();
-$proto99["m_sql"] = "spr.campus_id = se.student_id  AND spr.status='ACTIVE'";
+$proto99["m_sql"] = "spr.campus_id = se.student_id  AND spr.term_admitted <= se.term_id   AND (spr.term_end IS NULL OR spr.term_end > se.term_id)";
 $proto99["m_uniontype"] = "SQLL_AND";
 	$obj = new SQLNonParsed(array(
-	"m_sql" => "spr.campus_id = se.student_id  AND spr.status='ACTIVE'"
+	"m_sql" => "spr.campus_id = se.student_id  AND spr.term_admitted <= se.term_id   AND (spr.term_end IS NULL OR spr.term_end > se.term_id)"
 ));
 
 $proto99["m_column"]=$obj;
@@ -2644,21 +2645,73 @@ $obj = new SQLLogicalExpr($proto101);
 
 			$proto99["m_contained"][]=$obj;
 						$proto103=array();
-$proto103["m_sql"] = "spr.status='ACTIVE'";
+$proto103["m_sql"] = "spr.term_admitted <= se.term_id";
 $proto103["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
-	"m_strName" => "status",
+	"m_strName" => "term_admitted",
 	"m_strTable" => "spr",
 	"m_srcTableName" => "enrollment_count_by_unit_and_batch"
 ));
 
 $proto103["m_column"]=$obj;
 $proto103["m_contained"] = array();
-$proto103["m_strCase"] = "='ACTIVE'";
+$proto103["m_strCase"] = "<= se.term_id";
 $proto103["m_havingmode"] = false;
 $proto103["m_inBrackets"] = false;
 $proto103["m_useAlias"] = false;
 $obj = new SQLLogicalExpr($proto103);
+
+			$proto99["m_contained"][]=$obj;
+						$proto105=array();
+$proto105["m_sql"] = "spr.term_end IS NULL OR spr.term_end > se.term_id";
+$proto105["m_uniontype"] = "SQLL_OR";
+	$obj = new SQLNonParsed(array(
+	"m_sql" => "spr.term_end IS NULL OR spr.term_end > se.term_id"
+));
+
+$proto105["m_column"]=$obj;
+$proto105["m_contained"] = array();
+						$proto107=array();
+$proto107["m_sql"] = "spr.term_end IS NULL";
+$proto107["m_uniontype"] = "SQLL_UNKNOWN";
+						$obj = new SQLField(array(
+	"m_strName" => "term_end",
+	"m_strTable" => "spr",
+	"m_srcTableName" => "enrollment_count_by_unit_and_batch"
+));
+
+$proto107["m_column"]=$obj;
+$proto107["m_contained"] = array();
+$proto107["m_strCase"] = "IS NULL";
+$proto107["m_havingmode"] = false;
+$proto107["m_inBrackets"] = false;
+$proto107["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto107);
+
+			$proto105["m_contained"][]=$obj;
+						$proto109=array();
+$proto109["m_sql"] = "spr.term_end > se.term_id";
+$proto109["m_uniontype"] = "SQLL_UNKNOWN";
+						$obj = new SQLField(array(
+	"m_strName" => "term_end",
+	"m_strTable" => "spr",
+	"m_srcTableName" => "enrollment_count_by_unit_and_batch"
+));
+
+$proto109["m_column"]=$obj;
+$proto109["m_contained"] = array();
+$proto109["m_strCase"] = "> se.term_id";
+$proto109["m_havingmode"] = false;
+$proto109["m_inBrackets"] = false;
+$proto109["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto109);
+
+			$proto105["m_contained"][]=$obj;
+$proto105["m_strCase"] = "";
+$proto105["m_havingmode"] = false;
+$proto105["m_inBrackets"] = true;
+$proto105["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto105);
 
 			$proto99["m_contained"][]=$obj;
 $proto99["m_strCase"] = "";
@@ -2672,37 +2725,37 @@ $obj = new SQLFromListItem($proto97);
 
 $proto62["m_fromlist"][]=$obj;
 $proto62["m_groupby"] = array();
-												$proto105=array();
+												$proto111=array();
 						$obj = new SQLField(array(
 	"m_strName" => "student_id",
 	"m_strTable" => "se",
 	"m_srcTableName" => "enrollment_count_by_unit_and_batch"
 ));
 
-$proto105["m_column"]=$obj;
-$obj = new SQLGroupByItem($proto105);
+$proto111["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto111);
 
 $proto62["m_groupby"][]=$obj;
-												$proto107=array();
+												$proto113=array();
 						$obj = new SQLField(array(
 	"m_strName" => "acad_group",
 	"m_strTable" => "spr",
 	"m_srcTableName" => "enrollment_count_by_unit_and_batch"
 ));
 
-$proto107["m_column"]=$obj;
-$obj = new SQLGroupByItem($proto107);
+$proto113["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto113);
 
 $proto62["m_groupby"][]=$obj;
-												$proto109=array();
+												$proto115=array();
 						$obj = new SQLField(array(
 	"m_strName" => "term_id",
 	"m_strTable" => "se",
 	"m_srcTableName" => "enrollment_count_by_unit_and_batch"
 ));
 
-$proto109["m_column"]=$obj;
-$obj = new SQLGroupByItem($proto109);
+$proto115["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto115);
 
 $proto62["m_groupby"][]=$obj;
 $proto62["m_orderby"] = array();
@@ -2710,193 +2763,193 @@ $proto62["m_srcTableName"]="enrollment_count_by_unit_and_batch";
 $obj = new SQLQuery($proto62);
 
 $proto61["m_table"] = $obj;
-$proto61["m_sql"] = "join (  SELECT student_id, spr.acad_group, sum(credit) total_enrl,se.term_id FROM student_enlistments se  JOIN student_enlist_classes sec ON sec.student_enlistment_id = se.id AND sec.status IN ('Enlisted','Finalized')  JOIN classes cl ON cl.id = sec.class_id AND cl.term_id=se.term_id  JOIN student_program_records spr ON spr.campus_id = se.student_id  AND spr.status='ACTIVE'    GROUP BY student_id, spr.acad_group,se.term_id   ) enl on ac.student_id=enl.student_id and ac.term_id = enl.term_id";
+$proto61["m_sql"] = "join (  SELECT student_id, spr.acad_group, sum(credit) total_enrl,se.term_id FROM student_enlistments se  JOIN student_enlist_classes sec ON sec.student_enlistment_id = se.id AND sec.status IN ('Enlisted','Finalized')  JOIN classes cl ON cl.id = sec.class_id AND cl.term_id=se.term_id  JOIN student_program_history_view spr ON spr.campus_id = se.student_id  AND spr.term_admitted <= se.term_id   AND (spr.term_end IS NULL OR spr.term_end > se.term_id)    GROUP BY student_id, spr.acad_group,se.term_id   ) enl on ac.student_id=enl.student_id and ac.term_id = enl.term_id";
 $proto61["m_alias"] = "enl";
 $proto61["m_srcTableName"] = "enrollment_count_by_unit_and_batch";
-$proto111=array();
-$proto111["m_sql"] = "enl.student_id = ac.student_id AND enl.term_id = ac.term_id";
-$proto111["m_uniontype"] = "SQLL_AND";
+$proto117=array();
+$proto117["m_sql"] = "enl.student_id = ac.student_id AND enl.term_id = ac.term_id";
+$proto117["m_uniontype"] = "SQLL_AND";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => "enl.student_id = ac.student_id AND enl.term_id = ac.term_id"
 ));
 
-$proto111["m_column"]=$obj;
-$proto111["m_contained"] = array();
-						$proto113=array();
-$proto113["m_sql"] = "ac.student_id=enl.student_id";
-$proto113["m_uniontype"] = "SQLL_UNKNOWN";
-						$obj = new SQLField(array(
-	"m_strName" => "student_id",
-	"m_strTable" => "ac",
-	"m_srcTableName" => "enrollment_count_by_unit_and_batch"
-));
-
-$proto113["m_column"]=$obj;
-$proto113["m_contained"] = array();
-$proto113["m_strCase"] = "=enl.student_id";
-$proto113["m_havingmode"] = false;
-$proto113["m_inBrackets"] = false;
-$proto113["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto113);
-
-			$proto111["m_contained"][]=$obj;
-						$proto115=array();
-$proto115["m_sql"] = "ac.term_id = enl.term_id";
-$proto115["m_uniontype"] = "SQLL_UNKNOWN";
-						$obj = new SQLField(array(
-	"m_strName" => "term_id",
-	"m_strTable" => "ac",
-	"m_srcTableName" => "enrollment_count_by_unit_and_batch"
-));
-
-$proto115["m_column"]=$obj;
-$proto115["m_contained"] = array();
-$proto115["m_strCase"] = "= enl.term_id";
-$proto115["m_havingmode"] = false;
-$proto115["m_inBrackets"] = false;
-$proto115["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto115);
-
-			$proto111["m_contained"][]=$obj;
-						$proto117=array();
-$proto117["m_sql"] = "enl.student_id = ac.student_id";
-$proto117["m_uniontype"] = "SQLL_UNKNOWN";
-						$obj = new SQLField(array(
-	"m_strName" => "student_id",
-	"m_strTable" => "enl",
-	"m_srcTableName" => "enrollment_count_by_unit_and_batch"
-));
-
 $proto117["m_column"]=$obj;
 $proto117["m_contained"] = array();
-$proto117["m_strCase"] = "= ac.student_id";
-$proto117["m_havingmode"] = false;
-$proto117["m_inBrackets"] = false;
-$proto117["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto117);
-
-			$proto111["m_contained"][]=$obj;
 						$proto119=array();
-$proto119["m_sql"] = "enl.term_id = ac.term_id";
+$proto119["m_sql"] = "ac.student_id=enl.student_id";
 $proto119["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
-	"m_strName" => "term_id",
-	"m_strTable" => "enl",
+	"m_strName" => "student_id",
+	"m_strTable" => "ac",
 	"m_srcTableName" => "enrollment_count_by_unit_and_batch"
 ));
 
 $proto119["m_column"]=$obj;
 $proto119["m_contained"] = array();
-$proto119["m_strCase"] = "= ac.term_id";
+$proto119["m_strCase"] = "=enl.student_id";
 $proto119["m_havingmode"] = false;
 $proto119["m_inBrackets"] = false;
 $proto119["m_useAlias"] = false;
 $obj = new SQLLogicalExpr($proto119);
 
-			$proto111["m_contained"][]=$obj;
-$proto111["m_strCase"] = "";
-$proto111["m_havingmode"] = false;
-$proto111["m_inBrackets"] = false;
-$proto111["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto111);
+			$proto117["m_contained"][]=$obj;
+						$proto121=array();
+$proto121["m_sql"] = "ac.term_id = enl.term_id";
+$proto121["m_uniontype"] = "SQLL_UNKNOWN";
+						$obj = new SQLField(array(
+	"m_strName" => "term_id",
+	"m_strTable" => "ac",
+	"m_srcTableName" => "enrollment_count_by_unit_and_batch"
+));
+
+$proto121["m_column"]=$obj;
+$proto121["m_contained"] = array();
+$proto121["m_strCase"] = "= enl.term_id";
+$proto121["m_havingmode"] = false;
+$proto121["m_inBrackets"] = false;
+$proto121["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto121);
+
+			$proto117["m_contained"][]=$obj;
+						$proto123=array();
+$proto123["m_sql"] = "enl.student_id = ac.student_id";
+$proto123["m_uniontype"] = "SQLL_UNKNOWN";
+						$obj = new SQLField(array(
+	"m_strName" => "student_id",
+	"m_strTable" => "enl",
+	"m_srcTableName" => "enrollment_count_by_unit_and_batch"
+));
+
+$proto123["m_column"]=$obj;
+$proto123["m_contained"] = array();
+$proto123["m_strCase"] = "= ac.student_id";
+$proto123["m_havingmode"] = false;
+$proto123["m_inBrackets"] = false;
+$proto123["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto123);
+
+			$proto117["m_contained"][]=$obj;
+						$proto125=array();
+$proto125["m_sql"] = "enl.term_id = ac.term_id";
+$proto125["m_uniontype"] = "SQLL_UNKNOWN";
+						$obj = new SQLField(array(
+	"m_strName" => "term_id",
+	"m_strTable" => "enl",
+	"m_srcTableName" => "enrollment_count_by_unit_and_batch"
+));
+
+$proto125["m_column"]=$obj;
+$proto125["m_contained"] = array();
+$proto125["m_strCase"] = "= ac.term_id";
+$proto125["m_havingmode"] = false;
+$proto125["m_inBrackets"] = false;
+$proto125["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto125);
+
+			$proto117["m_contained"][]=$obj;
+$proto117["m_strCase"] = "";
+$proto117["m_havingmode"] = false;
+$proto117["m_inBrackets"] = false;
+$proto117["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto117);
 
 $proto61["m_joinon"] = $obj;
 $obj = new SQLFromListItem($proto61);
 
 $proto0["m_fromlist"][]=$obj;
-												$proto121=array();
-$proto121["m_link"] = "SQLL_INNERJOIN";
-			$proto122=array();
-$proto122["m_strName"] = "public.student_terms";
-$proto122["m_srcTableName"] = "enrollment_count_by_unit_and_batch";
-$proto122["m_columns"] = array();
-$proto122["m_columns"][] = "term_id";
-$proto122["m_columns"][] = "term";
-$proto122["m_columns"][] = "ay";
-$proto122["m_columns"][] = "status";
-$proto122["m_columns"][] = "created_at";
-$proto122["m_columns"][] = "updated_at";
-$proto122["m_columns"][] = "term_type";
-$proto122["m_columns"][] = "start_date";
-$proto122["m_columns"][] = "end_date";
-$obj = new SQLTable($proto122);
+												$proto127=array();
+$proto127["m_link"] = "SQLL_INNERJOIN";
+			$proto128=array();
+$proto128["m_strName"] = "public.student_terms";
+$proto128["m_srcTableName"] = "enrollment_count_by_unit_and_batch";
+$proto128["m_columns"] = array();
+$proto128["m_columns"][] = "term_id";
+$proto128["m_columns"][] = "term";
+$proto128["m_columns"][] = "ay";
+$proto128["m_columns"][] = "status";
+$proto128["m_columns"][] = "created_at";
+$proto128["m_columns"][] = "updated_at";
+$proto128["m_columns"][] = "term_type";
+$proto128["m_columns"][] = "start_date";
+$proto128["m_columns"][] = "end_date";
+$obj = new SQLTable($proto128);
 
-$proto121["m_table"] = $obj;
-$proto121["m_sql"] = "JOIN student_terms st on st.term_id = ac.term_id";
-$proto121["m_alias"] = "st";
-$proto121["m_srcTableName"] = "enrollment_count_by_unit_and_batch";
-$proto123=array();
-$proto123["m_sql"] = "st.term_id = ac.term_id";
-$proto123["m_uniontype"] = "SQLL_UNKNOWN";
+$proto127["m_table"] = $obj;
+$proto127["m_sql"] = "JOIN student_terms st on st.term_id = ac.term_id";
+$proto127["m_alias"] = "st";
+$proto127["m_srcTableName"] = "enrollment_count_by_unit_and_batch";
+$proto129=array();
+$proto129["m_sql"] = "st.term_id = ac.term_id";
+$proto129["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
 	"m_strName" => "term_id",
 	"m_strTable" => "st",
 	"m_srcTableName" => "enrollment_count_by_unit_and_batch"
 ));
 
-$proto123["m_column"]=$obj;
-$proto123["m_contained"] = array();
-$proto123["m_strCase"] = "= ac.term_id";
-$proto123["m_havingmode"] = false;
-$proto123["m_inBrackets"] = false;
-$proto123["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto123);
+$proto129["m_column"]=$obj;
+$proto129["m_contained"] = array();
+$proto129["m_strCase"] = "= ac.term_id";
+$proto129["m_havingmode"] = false;
+$proto129["m_inBrackets"] = false;
+$proto129["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto129);
 
-$proto121["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto121);
+$proto127["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto127);
 
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
-												$proto125=array();
+												$proto131=array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "batch"
 ));
 
-$proto125["m_column"]=$obj;
-$obj = new SQLGroupByItem($proto125);
+$proto131["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto131);
 
 $proto0["m_groupby"][]=$obj;
-												$proto127=array();
+												$proto133=array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "career"
 ));
 
-$proto127["m_column"]=$obj;
-$obj = new SQLGroupByItem($proto127);
+$proto133["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto133);
 
 $proto0["m_groupby"][]=$obj;
-												$proto129=array();
+												$proto135=array();
 						$obj = new SQLField(array(
 	"m_strName" => "term_id",
 	"m_strTable" => "ac",
 	"m_srcTableName" => "enrollment_count_by_unit_and_batch"
 ));
 
-$proto129["m_column"]=$obj;
-$obj = new SQLGroupByItem($proto129);
+$proto135["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto135);
 
 $proto0["m_groupby"][]=$obj;
 $proto0["m_orderby"] = array();
-												$proto131=array();
+												$proto137=array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "career"
 ));
 
-$proto131["m_column"]=$obj;
-$proto131["m_bAsc"] = 0;
-$proto131["m_nColumn"] = 0;
-$obj = new SQLOrderByItem($proto131);
+$proto137["m_column"]=$obj;
+$proto137["m_bAsc"] = 0;
+$proto137["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto137);
 
 $proto0["m_orderby"][]=$obj;					
-												$proto133=array();
+												$proto139=array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "batch"
 ));
 
-$proto133["m_column"]=$obj;
-$proto133["m_bAsc"] = 1;
-$proto133["m_nColumn"] = 0;
-$obj = new SQLOrderByItem($proto133);
+$proto139["m_column"]=$obj;
+$proto139["m_bAsc"] = 1;
+$proto139["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto139);
 
 $proto0["m_orderby"][]=$obj;					
 $proto0["m_srcTableName"]="enrollment_count_by_unit_and_batch";		
