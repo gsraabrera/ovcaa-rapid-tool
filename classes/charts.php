@@ -392,6 +392,10 @@ class Chart
 			return true;
 		if("public.student_enlistments" == $this->chrt_array['tables'][0])
 			return true;
+		if("public.scheduled_feature_dates" == $this->chrt_array['tables'][0])
+			return true;
+		if("public.student_terms" == $this->chrt_array['tables'][0])
+			return true;
 		return false;
 	}
 

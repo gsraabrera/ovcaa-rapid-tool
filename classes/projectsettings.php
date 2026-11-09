@@ -3592,6 +3592,10 @@ function fillProjectEntites()
 	$projectEntitiesReverse[ "unposted_student_grades" ] = "unposted_student_grades";
 	$projectEntities[ "Enrollment Distribution by Home College and Total Number of Units Enrolled" ] = array( "url" => "enrollment_distribution_by_home_college_and_total_number_of_units_enrolled", "type" => 1 );
 	$projectEntitiesReverse[ "enrollment_distribution_by_home_college_and_total_number_of_units_enrolled" ] = "Enrollment Distribution by Home College and Total Number of Units Enrolled";
+	$projectEntities[ "set_period_management" ] = array( "url" => "set_period_management", "type" => 1 );
+	$projectEntitiesReverse[ "set_period_management" ] = "set_period_management";
+	$projectEntities[ "public.student_terms" ] = array( "url" => "student_terms", "type" => 0 );
+	$projectEntitiesReverse[ "student_terms" ] = "public.student_terms";
 }
 
 function findTable( $table ) {

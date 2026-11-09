@@ -1,7 +1,7 @@
 <?php
 class AuditTrailTable
 {
-	var $logTableName="";
+	var $logTableName="public.af__audit";
 	var $params;
 
 	var $strLogin="login";
@@ -384,6 +384,14 @@ class AuditTrailTable
 		{
 			return false;
 		}
+		if($table=="set_period_management")
+		{
+			return true;
+		}
+		if($table=="public.student_terms")
+		{
+			return false;
+		}
 	}
 
 	protected function insert($datetime, $ip, $user, $table, $action, $description)
@@ -717,6 +725,14 @@ class AuditTrailFile
 			return false;
 		}
 		if($table=="Enrollment Distribution by Home College and Total Number of Units Enrolled")
+		{
+			return false;
+		}
+		if($table=="set_period_management")
+		{
+			return true;
+		}
+		if($table=="public.student_terms")
 		{
 			return false;
 		}

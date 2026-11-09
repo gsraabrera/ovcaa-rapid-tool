@@ -48,12 +48,14 @@ function DBLookup($sql)
 class tDAL
 {
 	var $tblfinancialslatestDbatlocalhost_public_academic_specializations;
+	var $tblfinancialslatestDbatlocalhost_public_af__audit;
 	var $tblfinancialslatestDbatlocalhost_public_class_faculty_in_charge;
 	var $tblfinancialslatestDbatlocalhost_public_classes;
 	var $tblfinancialslatestDbatlocalhost_public_courses;
 	var $tblfinancialslatestDbatlocalhost_public_faculties;
 	var $tblfinancialslatestDbatlocalhost_public_ovcaa_rapid_users;
 	var $tblfinancialslatestDbatlocalhost_public_s_student_grades;
+	var $tblfinancialslatestDbatlocalhost_public_scheduled_feature_dates;
 	var $tblfinancialslatestDbatlocalhost_public_student_enlist_classes;
 	var $tblfinancialslatestDbatlocalhost_public_student_enlistments;
 	var $tblfinancialslatestDbatlocalhost_public_student_program_history_view;
@@ -69,12 +71,14 @@ class tDAL
 		if($this->lstTables)
 			return;
 		$this->lstTables[] = array("name" => "academic_specializations", "varname" => "financialslatestDbatlocalhost_public_academic_specializations", "altvarname" => "academic_specializations", "connId" => "financialslatestDbatlocalhost", "schema" => "public", "connName" => "financialslatestDb at localhos");
+		$this->lstTables[] = array("name" => "af__audit", "varname" => "financialslatestDbatlocalhost_public_af__audit", "altvarname" => "af__audit", "connId" => "financialslatestDbatlocalhost", "schema" => "public", "connName" => "financialslatestDb at localhos");
 		$this->lstTables[] = array("name" => "class_faculty_in_charge", "varname" => "financialslatestDbatlocalhost_public_class_faculty_in_charge", "altvarname" => "class_faculty_in_charge", "connId" => "financialslatestDbatlocalhost", "schema" => "public", "connName" => "financialslatestDb at localhos");
 		$this->lstTables[] = array("name" => "classes", "varname" => "financialslatestDbatlocalhost_public_classes", "altvarname" => "classes", "connId" => "financialslatestDbatlocalhost", "schema" => "public", "connName" => "financialslatestDb at localhos");
 		$this->lstTables[] = array("name" => "courses", "varname" => "financialslatestDbatlocalhost_public_courses", "altvarname" => "courses", "connId" => "financialslatestDbatlocalhost", "schema" => "public", "connName" => "financialslatestDb at localhos");
 		$this->lstTables[] = array("name" => "faculties", "varname" => "financialslatestDbatlocalhost_public_faculties", "altvarname" => "faculties", "connId" => "financialslatestDbatlocalhost", "schema" => "public", "connName" => "financialslatestDb at localhos");
 		$this->lstTables[] = array("name" => "ovcaa_rapid_users", "varname" => "financialslatestDbatlocalhost_public_ovcaa_rapid_users", "altvarname" => "ovcaa_rapid_users", "connId" => "financialslatestDbatlocalhost", "schema" => "public", "connName" => "financialslatestDb at localhos");
 		$this->lstTables[] = array("name" => "s_student_grades", "varname" => "financialslatestDbatlocalhost_public_s_student_grades", "altvarname" => "s_student_grades", "connId" => "financialslatestDbatlocalhost", "schema" => "public", "connName" => "financialslatestDb at localhos");
+		$this->lstTables[] = array("name" => "scheduled_feature_dates", "varname" => "financialslatestDbatlocalhost_public_scheduled_feature_dates", "altvarname" => "scheduled_feature_dates", "connId" => "financialslatestDbatlocalhost", "schema" => "public", "connName" => "financialslatestDb at localhos");
 		$this->lstTables[] = array("name" => "student_enlist_classes", "varname" => "financialslatestDbatlocalhost_public_student_enlist_classes", "altvarname" => "student_enlist_classes", "connId" => "financialslatestDbatlocalhost", "schema" => "public", "connName" => "financialslatestDb at localhos");
 		$this->lstTables[] = array("name" => "student_enlistments", "varname" => "financialslatestDbatlocalhost_public_student_enlistments", "altvarname" => "student_enlistments", "connId" => "financialslatestDbatlocalhost", "schema" => "public", "connName" => "financialslatestDb at localhos");
 		$this->lstTables[] = array("name" => "student_program_history_view", "varname" => "financialslatestDbatlocalhost_public_student_program_history_view", "altvarname" => "student_program_history_view", "connId" => "financialslatestDbatlocalhost", "schema" => "public", "connName" => "financialslatestDb at localhos");

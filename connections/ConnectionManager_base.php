@@ -149,7 +149,7 @@ class ConnectionManager_Base
 	 */
 	public function getForAudit()
 	{
-		return $this->getDefault();
+		return $this->byId( "financialslatestDbatlocalhost" );
 	}
 
 	/**
@@ -158,7 +158,7 @@ class ConnectionManager_Base
 	 */
 	public function getForLocking()
 	{
-		return $this->getDefault();
+		return $this->byId( "financialslatestDbatlocalhost" );
 	}
 
 	/**
@@ -249,6 +249,8 @@ class ConnectionManager_Base
 		$connectionsIds["grade_submission_monitoring"] = "financialslatestDbatlocalhost";
 		$connectionsIds["unposted_student_grades"] = "financialslatestDbatlocalhost";
 		$connectionsIds["Enrollment Distribution by Home College and Total Number of Units Enrolled"] = "financialslatestDbatlocalhost";
+		$connectionsIds["set_period_management"] = "financialslatestDbatlocalhost";
+		$connectionsIds["public.student_terms"] = "financialslatestDbatlocalhost";
 
 		$this->_tablesConnectionIds = &$connectionsIds;
 	}

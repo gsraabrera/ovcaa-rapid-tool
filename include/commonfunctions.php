@@ -217,6 +217,10 @@ function checkTableName($shortTName )
 		return true;
 	if ("enrollment_distribution_by_home_college_and_total_number_of_units_enrolled" == $shortTName )
 		return true;
+	if ("set_period_management" == $shortTName )
+		return true;
+	if ("student_terms" == $shortTName )
+		return true;
 	return false;
 }
 
@@ -330,6 +334,24 @@ function GetTablesList($pdfMode = false)
 	if( $tableAvailable ) {
 		$arr[]="Enrollment Distribution by Home College and Total Number of Units Enrolled";
 	}
+	$tableAvailable = true;
+	if( $checkPermissions ) {
+		$strPerm = GetUserPermissions("set_period_management");
+		$tableAvailable = ( strpos($strPerm, "P") !== false
+			|| $pdfMode && strpos($strPerm, "S") !== false );
+	}
+	if( $tableAvailable ) {
+		$arr[]="set_period_management";
+	}
+	$tableAvailable = true;
+	if( $checkPermissions ) {
+		$strPerm = GetUserPermissions("public.student_terms");
+		$tableAvailable = ( strpos($strPerm, "P") !== false
+			|| $pdfMode && strpos($strPerm, "S") !== false );
+	}
+	if( $tableAvailable ) {
+		$arr[]="public.student_terms";
+	}
 	return $arr;
 }
 
@@ -346,6 +368,8 @@ function GetTablesListWithoutSecurity()
 	$arr[]="grade_submission_monitoring";
 	$arr[]="unposted_student_grades";
 	$arr[]="Enrollment Distribution by Home College and Total Number of Units Enrolled";
+	$arr[]="set_period_management";
+	$arr[]="public.student_terms";
 	return $arr;
 }
 
@@ -1006,6 +1030,18 @@ function GetUserPermissionsStatic( $table )
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="Enrollment Distribution by Home College and Total Number of Units Enrolled" )
+	{
+//	default permissions
+		// grant all by default
+		return "ADESPI".$extraPerm;
+	}
+	if( $table=="set_period_management" )
+	{
+//	default permissions
+		// grant all by default
+		return "ADESPI".$extraPerm;
+	}
+	if( $table=="public.student_terms" )
 	{
 //	default permissions
 		// grant all by default
@@ -1738,7 +1774,6 @@ function GetFullSiteUrl()
  */
 function GetAuditObject($table="")
 {
-	return NULL;
 
 	$linkAudit = false;
 	if(!$table)
@@ -1753,6 +1788,7 @@ function GetAuditObject($table="")
 	if ($linkAudit)
 	{
 		require_once(getabspath("include/audit.php"));
+		return new AuditTrailTable();
 	}
 	else
 	{
@@ -3037,6 +3073,7 @@ function GetBaseScriptsForPage($isDisplayLoading, $additionalScripts = "", $cust
 	$result .= $additionalScripts;
 	$result .= "<script type=\"text/javascript\" src=\"".GetRootPathForResources("include/lang/".getLangFileName(mlang_getcurrentlang()).".js?41974")."\"></script>";
 
+	$result .= "<script type=\"text/javascript\" src=\"".GetRootPathForResources("plugins/innovaeditor/scripts/innovaeditor.js")."\"></script>";
 
 
 	if( getMapProvider() == BING_MAPS )
