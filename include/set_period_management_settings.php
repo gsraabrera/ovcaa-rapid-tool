@@ -211,9 +211,9 @@ $tdataset_period_management[".strOrderBy"] = $tstrOrderBy;
 $tdataset_period_management[".orderindexes"] = array();
 
 
-$tdataset_period_management[".sqlHead"] = "SELECT id,  	scheduled_feature_id,  	description,  	start_datetime,  	end_datetime,  	content,  	created_at,  	updated_at,  	term_id";
-$tdataset_period_management[".sqlFrom"] = "FROM \"public\".scheduled_feature_dates";
-$tdataset_period_management[".sqlWhereExpr"] = "scheduled_feature_id = 64";
+$tdataset_period_management[".sqlHead"] = "SELECT id,      scheduled_feature_id,      description,      start_datetime,      end_datetime,      content,      created_at,      updated_at,      term_id";
+$tdataset_period_management[".sqlFrom"] = "FROM public.scheduled_feature_dates sfd";
+$tdataset_period_management[".sqlWhereExpr"] = "EXISTS (      SELECT 1      FROM public.scheduled_features sf      WHERE sf.id = sfd.scheduled_feature_id        AND sf.feature_name = 'set_module_application'  )";
 $tdataset_period_management[".sqlTail"] = "";
 
 
@@ -1597,25 +1597,23 @@ function createSqlQuery_set_period_management()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "id,  	scheduled_feature_id,  	description,  	start_datetime,  	end_datetime,  	content,  	created_at,  	updated_at,  	term_id";
-$proto0["m_strFrom"] = "FROM \"public\".scheduled_feature_dates";
-$proto0["m_strWhere"] = "scheduled_feature_id = 64";
+$proto0["m_strFieldList"] = "id,      scheduled_feature_id,      description,      start_datetime,      end_datetime,      content,      created_at,      updated_at,      term_id";
+$proto0["m_strFrom"] = "FROM public.scheduled_feature_dates sfd";
+$proto0["m_strWhere"] = "EXISTS (      SELECT 1      FROM public.scheduled_features sf      WHERE sf.id = sfd.scheduled_feature_id        AND sf.feature_name = 'set_module_application'  )";
 $proto0["m_strOrderBy"] = "";
 	
 		;
 			$proto0["cipherer"] = null;
 $proto2=array();
-$proto2["m_sql"] = "scheduled_feature_id = 64";
+$proto2["m_sql"] = "EXISTS (      SELECT 1      FROM public.scheduled_features sf      WHERE sf.id = sfd.scheduled_feature_id        AND sf.feature_name = 'set_module_application'  )";
 $proto2["m_uniontype"] = "SQLL_UNKNOWN";
-						$obj = new SQLField(array(
-	"m_strName" => "scheduled_feature_id",
-	"m_strTable" => "public.scheduled_feature_dates",
-	"m_srcTableName" => "set_period_management"
+	$obj = new SQLNonParsed(array(
+	"m_sql" => "EXISTS (      SELECT 1      FROM public.scheduled_features sf      WHERE sf.id = sfd.scheduled_feature_id        AND sf.feature_name = 'set_module_application'  )"
 ));
 
 $proto2["m_column"]=$obj;
 $proto2["m_contained"] = array();
-$proto2["m_strCase"] = "= 64";
+$proto2["m_strCase"] = "";
 $proto2["m_havingmode"] = false;
 $proto2["m_inBrackets"] = false;
 $proto2["m_useAlias"] = false;
@@ -1642,7 +1640,7 @@ $proto0["m_fieldlist"] = array();
 						$proto6=array();
 			$obj = new SQLField(array(
 	"m_strName" => "id",
-	"m_strTable" => "public.scheduled_feature_dates",
+	"m_strTable" => "sfd",
 	"m_srcTableName" => "set_period_management"
 ));
 
@@ -1656,7 +1654,7 @@ $proto0["m_fieldlist"][]=$obj;
 						$proto8=array();
 			$obj = new SQLField(array(
 	"m_strName" => "scheduled_feature_id",
-	"m_strTable" => "public.scheduled_feature_dates",
+	"m_strTable" => "sfd",
 	"m_srcTableName" => "set_period_management"
 ));
 
@@ -1670,7 +1668,7 @@ $proto0["m_fieldlist"][]=$obj;
 						$proto10=array();
 			$obj = new SQLField(array(
 	"m_strName" => "description",
-	"m_strTable" => "public.scheduled_feature_dates",
+	"m_strTable" => "sfd",
 	"m_srcTableName" => "set_period_management"
 ));
 
@@ -1684,7 +1682,7 @@ $proto0["m_fieldlist"][]=$obj;
 						$proto12=array();
 			$obj = new SQLField(array(
 	"m_strName" => "start_datetime",
-	"m_strTable" => "public.scheduled_feature_dates",
+	"m_strTable" => "sfd",
 	"m_srcTableName" => "set_period_management"
 ));
 
@@ -1698,7 +1696,7 @@ $proto0["m_fieldlist"][]=$obj;
 						$proto14=array();
 			$obj = new SQLField(array(
 	"m_strName" => "end_datetime",
-	"m_strTable" => "public.scheduled_feature_dates",
+	"m_strTable" => "sfd",
 	"m_srcTableName" => "set_period_management"
 ));
 
@@ -1712,7 +1710,7 @@ $proto0["m_fieldlist"][]=$obj;
 						$proto16=array();
 			$obj = new SQLField(array(
 	"m_strName" => "content",
-	"m_strTable" => "public.scheduled_feature_dates",
+	"m_strTable" => "sfd",
 	"m_srcTableName" => "set_period_management"
 ));
 
@@ -1726,7 +1724,7 @@ $proto0["m_fieldlist"][]=$obj;
 						$proto18=array();
 			$obj = new SQLField(array(
 	"m_strName" => "created_at",
-	"m_strTable" => "public.scheduled_feature_dates",
+	"m_strTable" => "sfd",
 	"m_srcTableName" => "set_period_management"
 ));
 
@@ -1740,7 +1738,7 @@ $proto0["m_fieldlist"][]=$obj;
 						$proto20=array();
 			$obj = new SQLField(array(
 	"m_strName" => "updated_at",
-	"m_strTable" => "public.scheduled_feature_dates",
+	"m_strTable" => "sfd",
 	"m_srcTableName" => "set_period_management"
 ));
 
@@ -1754,7 +1752,7 @@ $proto0["m_fieldlist"][]=$obj;
 						$proto22=array();
 			$obj = new SQLField(array(
 	"m_strName" => "term_id",
-	"m_strTable" => "public.scheduled_feature_dates",
+	"m_strTable" => "sfd",
 	"m_srcTableName" => "set_period_management"
 ));
 
@@ -1784,8 +1782,8 @@ $proto25["m_columns"][] = "term_id";
 $obj = new SQLTable($proto25);
 
 $proto24["m_table"] = $obj;
-$proto24["m_sql"] = "\"public\".scheduled_feature_dates";
-$proto24["m_alias"] = "";
+$proto24["m_sql"] = "public.scheduled_feature_dates sfd";
+$proto24["m_alias"] = "sfd";
 $proto24["m_srcTableName"] = "set_period_management";
 $proto26=array();
 $proto26["m_sql"] = "";

@@ -40,13 +40,25 @@ function BeforeAdd(&$values, &$sqlValues, &$message, $inline, $pageObject)
 {
 
 				date_default_timezone_set('Asia/Manila');
-		$values["scheduled_feature_id"] = 64;
+		$sql = "SELECT id
+				  FROM scheduled_features
+				  WHERE feature_name = 'set_module_application'";
+
+		$rs = DB::Query($sql);
+		$data = $rs->fetchAssoc();
+
+		if (!$data) {
+			 $message = "Scheduled feature not found.";
+			 return false;
+		}
+
+		$feature_id = $data["id"];
+		$values["scheduled_feature_id"] = $feature_id;
 		$values["created_at"] = now();
 		$values["updated_at"] = now();
 		$start = strtotime($values["start_datetime"]);
     $end   = strtotime($values["end_datetime"]);
-    $feature_id = $values["scheduled_feature_id"]; // Adjust column name if using feature_code
-		$termId   = isset($values["term_id"]);
+		$termId   = isset($values["term_id"]) ? $values["term_id"] : null;
 
     // 1. Validation: Start must precede End
     if ($start >= $end) {
@@ -77,7 +89,7 @@ function BeforeAdd(&$values, &$sqlValues, &$message, $inline, $pageObject)
 						 AND term_id = " . db_prepare_string($termId) . "
             AND (start_datetime <= " . db_prepare_string($endDateStr) . " 
                  AND end_datetime >= " . db_prepare_string($startDateStr) . ")";
-		echo $sql;
+
     $rs = DB::Query($sql);
     if ($data = $rs->fetchAssoc()) {
         $message = "Schedule Conflict: An existing period for this feature overlaps with the selected date range.";
@@ -236,7 +248,7 @@ function BeforeEdit(&$values, &$sqlValues, $where, &$oldvalues, &$keys, &$messag
 		$startStr = isset($values["start_datetime"]) ? $values["start_datetime"] : $oldvalues["start_datetime"];
     $endStr   = isset($values["end_datetime"])   ? $values["end_datetime"]   : $oldvalues["end_datetime"];
     $featId   = isset($values["scheduled_feature_id"])      ? $values["scheduled_feature_id"]      : $oldvalues["scheduled_feature_id"];
-		$termId   = isset($values["term_id"]);
+		$termId   = isset($values["term_id"]) ? $values["term_id"] : null;
     $start = strtotime($startStr);
     $end   = strtotime($endStr);
     $now   = time();

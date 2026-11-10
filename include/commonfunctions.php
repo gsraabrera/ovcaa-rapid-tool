@@ -221,6 +221,8 @@ function checkTableName($shortTName )
 		return true;
 	if ("student_terms" == $shortTName )
 		return true;
+	if ("scee_period_management" == $shortTName )
+		return true;
 	return false;
 }
 
@@ -352,6 +354,15 @@ function GetTablesList($pdfMode = false)
 	if( $tableAvailable ) {
 		$arr[]="public.student_terms";
 	}
+	$tableAvailable = true;
+	if( $checkPermissions ) {
+		$strPerm = GetUserPermissions("scee_period_management");
+		$tableAvailable = ( strpos($strPerm, "P") !== false
+			|| $pdfMode && strpos($strPerm, "S") !== false );
+	}
+	if( $tableAvailable ) {
+		$arr[]="scee_period_management";
+	}
 	return $arr;
 }
 
@@ -370,6 +381,7 @@ function GetTablesListWithoutSecurity()
 	$arr[]="Enrollment Distribution by Home College and Total Number of Units Enrolled";
 	$arr[]="set_period_management";
 	$arr[]="public.student_terms";
+	$arr[]="scee_period_management";
 	return $arr;
 }
 
@@ -1042,6 +1054,12 @@ function GetUserPermissionsStatic( $table )
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="public.student_terms" )
+	{
+//	default permissions
+		// grant all by default
+		return "ADESPI".$extraPerm;
+	}
+	if( $table=="scee_period_management" )
 	{
 //	default permissions
 		// grant all by default

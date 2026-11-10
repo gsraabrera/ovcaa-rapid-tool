@@ -251,6 +251,7 @@ class ConnectionManager_Base
 		$connectionsIds["Enrollment Distribution by Home College and Total Number of Units Enrolled"] = "financialslatestDbatlocalhost";
 		$connectionsIds["set_period_management"] = "financialslatestDbatlocalhost";
 		$connectionsIds["public.student_terms"] = "financialslatestDbatlocalhost";
+		$connectionsIds["scee_period_management"] = "financialslatestDbatlocalhost";
 
 		$this->_tablesConnectionIds = &$connectionsIds;
 	}

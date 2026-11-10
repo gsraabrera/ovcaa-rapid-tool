@@ -3596,6 +3596,8 @@ function fillProjectEntites()
 	$projectEntitiesReverse[ "set_period_management" ] = "set_period_management";
 	$projectEntities[ "public.student_terms" ] = array( "url" => "student_terms", "type" => 0 );
 	$projectEntitiesReverse[ "student_terms" ] = "public.student_terms";
+	$projectEntities[ "scee_period_management" ] = array( "url" => "scee_period_management", "type" => 1 );
+	$projectEntitiesReverse[ "scee_period_management" ] = "scee_period_management";
 }
 
 function findTable( $table ) {

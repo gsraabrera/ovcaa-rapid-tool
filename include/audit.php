@@ -392,6 +392,10 @@ class AuditTrailTable
 		{
 			return false;
 		}
+		if($table=="scee_period_management")
+		{
+			return true;
+		}
 	}
 
 	protected function insert($datetime, $ip, $user, $table, $action, $description)
@@ -735,6 +739,10 @@ class AuditTrailFile
 		if($table=="public.student_terms")
 		{
 			return false;
+		}
+		if($table=="scee_period_management")
+		{
+			return true;
 		}
 	}
 

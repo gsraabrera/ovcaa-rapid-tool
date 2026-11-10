@@ -42,6 +42,14 @@ if(mlang_getcurrentlang()=="English")
 	$fieldLabelsdashboard["English"]["Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled_15_units_above"] = "15 units above";
 	$fieldLabelsdashboard["English"]["Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled_total"] = "Total";
 	$fieldLabelsdashboard["English"]["Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled_term_id"] = "Term Id";
+	$fieldLabelsdashboard["English"]["public_ovcaa_rapid_users_id"] = "ID";
+	$fieldLabelsdashboard["English"]["public_ovcaa_rapid_users_username"] = "Username";
+	$fieldLabelsdashboard["English"]["public_ovcaa_rapid_users_password"] = "Password";
+	$fieldLabelsdashboard["English"]["public_ovcaa_rapid_users_email"] = "Email";
+	$fieldLabelsdashboard["English"]["public_ovcaa_rapid_users_fullname"] = "Fullname";
+	$fieldLabelsdashboard["English"]["public_ovcaa_rapid_users_groupid"] = "Groupid";
+	$fieldLabelsdashboard["English"]["public_ovcaa_rapid_users_active"] = "Active";
+	$fieldLabelsdashboard["English"]["public_ovcaa_rapid_users_ext_security_id"] = "Ext Security Id";
 }
 
 /*
@@ -110,6 +118,30 @@ $tdatadashboard[".searchFields"]["Enrollment_Distribution_by_Home_College_and_To
 $dashField = array();
 $dashField[] = array( "table"=>"Enrollment Distribution by Home College and Total Number of Units Enrolled", "field"=>"term_id" );
 $tdatadashboard[".searchFields"]["Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled_term_id"] = $dashField;
+$dashField = array();
+$dashField[] = array( "table"=>"public.ovcaa_rapid_users", "field"=>"id" );
+$tdatadashboard[".searchFields"]["public_ovcaa_rapid_users_id"] = $dashField;
+$dashField = array();
+$dashField[] = array( "table"=>"public.ovcaa_rapid_users", "field"=>"username" );
+$tdatadashboard[".searchFields"]["public_ovcaa_rapid_users_username"] = $dashField;
+$dashField = array();
+$dashField[] = array( "table"=>"public.ovcaa_rapid_users", "field"=>"password" );
+$tdatadashboard[".searchFields"]["public_ovcaa_rapid_users_password"] = $dashField;
+$dashField = array();
+$dashField[] = array( "table"=>"public.ovcaa_rapid_users", "field"=>"email" );
+$tdatadashboard[".searchFields"]["public_ovcaa_rapid_users_email"] = $dashField;
+$dashField = array();
+$dashField[] = array( "table"=>"public.ovcaa_rapid_users", "field"=>"fullname" );
+$tdatadashboard[".searchFields"]["public_ovcaa_rapid_users_fullname"] = $dashField;
+$dashField = array();
+$dashField[] = array( "table"=>"public.ovcaa_rapid_users", "field"=>"groupid" );
+$tdatadashboard[".searchFields"]["public_ovcaa_rapid_users_groupid"] = $dashField;
+$dashField = array();
+$dashField[] = array( "table"=>"public.ovcaa_rapid_users", "field"=>"active" );
+$tdatadashboard[".searchFields"]["public_ovcaa_rapid_users_active"] = $dashField;
+$dashField = array();
+$dashField[] = array( "table"=>"public.ovcaa_rapid_users", "field"=>"ext_security_id" );
+$tdatadashboard[".searchFields"]["public_ovcaa_rapid_users_ext_security_id"] = $dashField;
 
 // all search fields
 $tdatadashboard[".allSearchFields"] = array();
@@ -134,6 +166,14 @@ $tdatadashboard[".allSearchFields"][] = "Enrollment_Distribution_by_Home_College
 $tdatadashboard[".allSearchFields"][] = "Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled_15_units_above";
 $tdatadashboard[".allSearchFields"][] = "Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled_total";
 $tdatadashboard[".allSearchFields"][] = "Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled_term_id";
+$tdatadashboard[".allSearchFields"][] = "public_ovcaa_rapid_users_id";
+$tdatadashboard[".allSearchFields"][] = "public_ovcaa_rapid_users_username";
+$tdatadashboard[".allSearchFields"][] = "public_ovcaa_rapid_users_password";
+$tdatadashboard[".allSearchFields"][] = "public_ovcaa_rapid_users_email";
+$tdatadashboard[".allSearchFields"][] = "public_ovcaa_rapid_users_fullname";
+$tdatadashboard[".allSearchFields"][] = "public_ovcaa_rapid_users_groupid";
+$tdatadashboard[".allSearchFields"][] = "public_ovcaa_rapid_users_active";
+$tdatadashboard[".allSearchFields"][] = "public_ovcaa_rapid_users_ext_security_id";
 
 // good like search fields
 $tdatadashboard[".googleLikeFields"] = array();
@@ -174,6 +214,28 @@ $tdatadashboard[".dashElements"] = array();
 	
 
 	$tdatadashboard[".dashElements"][] = $dbelement;
+	$dbelement = array( "elementName" => "public_ovcaa_rapid_users_snippet", "table" => "public.ovcaa_rapid_users",
+		 "pageName" => "","type" => 7);
+	$dbelement["cellName"] = "";
+
+		$dbelement["reload"] = 60;
+		$dbelement["width"] = 800;
+		$dbelement["height"] = 600;
+	$dbelement["snippetId"] = "Dashboard_snippet1";
+
+
+	$tdatadashboard[".dashElements"][] = $dbelement;
+	$dbelement = array( "elementName" => "public_ovcaa_rapid_users_snippet1", "table" => "public.ovcaa_rapid_users",
+		 "pageName" => "","type" => 7);
+	$dbelement["cellName"] = "";
+
+		$dbelement["reload"] = 60;
+		$dbelement["width"] = 800;
+		$dbelement["height"] = 600;
+	$dbelement["snippetId"] = "Dashboard_snippet2";
+
+
+	$tdatadashboard[".dashElements"][] = $dbelement;
 */
 $tdatadashboard[".shortTableName"] = "dashboard";
 $tdatadashboard[".entityType"] = 4;
@@ -181,7 +243,10 @@ $tdatadashboard[".entityType"] = 4;
 
 
 
-$tdatadashboard[".hasEvents"] = false;
+
+
+include_once(getabspath("include/dashboard_events.php"));
+$tdatadashboard[".hasEvents"] = true;
 
 
 $tdatadashboard[".tableType"] = "dashboard";

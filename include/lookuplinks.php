@@ -47,6 +47,13 @@ function InitLookupLinks()
 			$lookupTableLinks["public.student_terms"]["set_period_management.term_id"] = array();
 		}
 		$lookupTableLinks["public.student_terms"]["set_period_management.term_id"]["edit"] = array("table" => "set_period_management", "field" => "term_id", "page" => "edit");
+		if( !isset( $lookupTableLinks["public.student_terms"] ) ) {
+			$lookupTableLinks["public.student_terms"] = array();
+		}
+		if( !isset( $lookupTableLinks["public.student_terms"]["scee_period_management.term_id"] )) {
+			$lookupTableLinks["public.student_terms"]["scee_period_management.term_id"] = array();
+		}
+		$lookupTableLinks["public.student_terms"]["scee_period_management.term_id"]["edit"] = array("table" => "scee_period_management", "field" => "term_id", "page" => "edit");
 }
 
 ?>

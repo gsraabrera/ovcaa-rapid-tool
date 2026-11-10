@@ -753,9 +753,9 @@ $suggestAllContent = true;
 $strLastSQL = "";
 $showCustomMarkerOnPrint = false;
 
-$projectBuildKey = "69_1783414334";
+$projectBuildKey = "95_1783414334";
 $wizardBuildKey = "41974";
-$projectBuildNumber = "69";
+$projectBuildNumber = "95";
 
 $mlang_messages = array();
 $mlang_charsets = array();
@@ -788,8 +788,9 @@ $tableCaptions["English"]["enrollment_count_by_unit_and_batch"] = "Enrollment Di
 $tableCaptions["English"]["grade_submission_monitoring"] = "Grade Submission Monitoring";
 $tableCaptions["English"]["unposted_student_grades"] = "Unposted Student Grades";
 $tableCaptions["English"]["Enrollment_Distribution_by_Home_College_and_Total_Number_of_Units_Enrolled"] = "Enrollment Distribution by Home College and Total Number of Units Enrolled";
-$tableCaptions["English"]["set_period_management"] = "Set Period Management";
+$tableCaptions["English"]["set_period_management"] = "SET Period Management";
 $tableCaptions["English"]["public_student_terms"] = "Student Terms";
+$tableCaptions["English"]["scee_period_management"] = "SCEE Period Management";
 
 
 $globalEvents = new class_GlobalEvents;
