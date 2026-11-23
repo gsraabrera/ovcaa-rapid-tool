@@ -753,9 +753,9 @@ $suggestAllContent = true;
 $strLastSQL = "";
 $showCustomMarkerOnPrint = false;
 
-$projectBuildKey = "96_1783414334";
+$projectBuildKey = "116_1795411415";
 $wizardBuildKey = "41974";
-$projectBuildNumber = "96";
+$projectBuildNumber = "116";
 
 $mlang_messages = array();
 $mlang_charsets = array();
@@ -791,6 +791,7 @@ $tableCaptions["English"]["Enrollment_Distribution_by_Home_College_and_Total_Num
 $tableCaptions["English"]["set_period_management"] = "SET Period Management";
 $tableCaptions["English"]["public_student_terms"] = "Student Terms";
 $tableCaptions["English"]["scee_period_management"] = "SCEE Period Management";
+$tableCaptions["English"]["public_sets"] = "SET Report";
 
 
 $globalEvents = new class_GlobalEvents;

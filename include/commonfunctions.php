@@ -223,6 +223,8 @@ function checkTableName($shortTName )
 		return true;
 	if ("scee_period_management" == $shortTName )
 		return true;
+	if ("sets" == $shortTName )
+		return true;
 	return false;
 }
 
@@ -363,6 +365,15 @@ function GetTablesList($pdfMode = false)
 	if( $tableAvailable ) {
 		$arr[]="scee_period_management";
 	}
+	$tableAvailable = true;
+	if( $checkPermissions ) {
+		$strPerm = GetUserPermissions("public.sets");
+		$tableAvailable = ( strpos($strPerm, "P") !== false
+			|| $pdfMode && strpos($strPerm, "S") !== false );
+	}
+	if( $tableAvailable ) {
+		$arr[]="public.sets";
+	}
 	return $arr;
 }
 
@@ -382,6 +393,7 @@ function GetTablesListWithoutSecurity()
 	$arr[]="set_period_management";
 	$arr[]="public.student_terms";
 	$arr[]="scee_period_management";
+	$arr[]="public.sets";
 	return $arr;
 }
 
@@ -1060,6 +1072,12 @@ function GetUserPermissionsStatic( $table )
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="scee_period_management" )
+	{
+//	default permissions
+		// grant all by default
+		return "ADESPI".$extraPerm;
+	}
+	if( $table=="public.sets" )
 	{
 //	default permissions
 		// grant all by default

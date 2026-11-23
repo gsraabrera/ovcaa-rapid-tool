@@ -252,7 +252,7 @@ $tdatadashboard[".hasEvents"] = true;
 $tdatadashboard[".tableType"] = "dashboard";
 
 
-
+	
 $tdatadashboard[".addPageEvents"] = false;
 
 $tdatadashboard[".isUseAjaxSuggest"] = true;

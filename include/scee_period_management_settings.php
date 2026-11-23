@@ -149,7 +149,7 @@ $tdatascee_period_management[".isUseAjaxSuggest"] = true;
 
 
 
-
+			
 
 $tdatascee_period_management[".ajaxCodeSnippetAdded"] = false;
 

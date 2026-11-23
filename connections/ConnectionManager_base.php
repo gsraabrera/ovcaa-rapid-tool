@@ -252,6 +252,7 @@ class ConnectionManager_Base
 		$connectionsIds["set_period_management"] = "financialslatestDbatlocalhost";
 		$connectionsIds["public.student_terms"] = "financialslatestDbatlocalhost";
 		$connectionsIds["scee_period_management"] = "financialslatestDbatlocalhost";
+		$connectionsIds["public.sets"] = "financialslatestDbatlocalhost";
 
 		$this->_tablesConnectionIds = &$connectionsIds;
 	}

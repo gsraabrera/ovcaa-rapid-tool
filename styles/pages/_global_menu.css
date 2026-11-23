@@ -22,6 +22,9 @@
 [data-page="_global_menu"][data-itemid="welcome_item7"] > .bs-welcome-header {
   background-color: #DB7093;
 }
+[data-page="_global_menu"][data-itemid="welcome_item8"] > .bs-welcome-header {
+  background-color: #E07878;
+}
 [data-page="_global_menu"][data-itemid="page_image_ash8f23hr"] {
   width: 400px;
 }

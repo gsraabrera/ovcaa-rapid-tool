@@ -12,6 +12,7 @@ $dalTableclass_faculty_in_charge["is_encoder"] = array("type"=>11,"varname"=>"is
 $dalTableclass_faculty_in_charge["is_approver"] = array("type"=>11,"varname"=>"is_approver", "name" => "is_approver", "autoInc" => "0");
 $dalTableclass_faculty_in_charge["is_poster"] = array("type"=>11,"varname"=>"is_poster", "name" => "is_poster", "autoInc" => "0");
 $dalTableclass_faculty_in_charge["is_set"] = array("type"=>11,"varname"=>"is_set", "name" => "is_set", "autoInc" => "0");
+$dalTableclass_faculty_in_charge["is_display_set"] = array("type"=>11,"varname"=>"is_display_set", "name" => "is_display_set", "autoInc" => "0");
 
 $dal_info["financialslatestDbatlocalhost_public_class_faculty_in_charge"] = &$dalTableclass_faculty_in_charge;
 ?>
